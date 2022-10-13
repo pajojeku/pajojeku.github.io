@@ -53,7 +53,7 @@ function klik(nr) {
         document.getElementById("p"+litery[nr]).style.borderColor="red";
         document.getElementById("p"+litery[nr]).setAttribute("onclick",";");
         zycie-=1;
-        document.getElementById("stan").innerHTML="<img src="+zycie+".png width=\"80%\">";
+        document.getElementById("stan").innerHTML="<img src="+zycie+".png>";
     }
 
     if(zycie<=0)
