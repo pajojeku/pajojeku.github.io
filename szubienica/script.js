@@ -5,7 +5,7 @@ var literyKlawiatury="";
 var zakreskowaneHaslo="";
 var zycie=5;
 
-var podpowiedz="Podpowiedź: "+"gatunek małpy";
+var podpowiedz="Kategoria: "+"Małpy";
 
 function start() {
     
@@ -24,13 +24,11 @@ function start() {
     {
         literyKlawiatury+="<input type=\"button\" class=\"przycisk\" value=\""+litery[i]+"\" id=\"p"+litery[i]+"\" onclick=\"klik("+i+")\">"
 
-        if(i==11)
-        literyKlawiatury+="<br>"
-
-        if(i==22)
+        if(i==8 || i==16 || i==23 || i==31) 
         literyKlawiatury+="<br>"
     }
     document.getElementById("klawiatura").innerHTML=literyKlawiatury;
+    
 }
 
 function klik(nr) {
@@ -59,8 +57,8 @@ function klik(nr) {
     }
 
     if(zycie<=0)
-    document.getElementById("klawiatura").innerHTML="<span id=przegrana>Przegrałeś!<br>Hasło to "+haslo+"</span>";
+    document.getElementById("klawiatura").innerHTML="<span id=przegrana>Nie zgadłeś!<br>Hasło to<br>"+haslo+"</span>";
 
     if(!zakreskowaneHaslo.includes("#"))
-    document.getElementById("klawiatura").innerHTML="<span id=wygrana>Wygrałeś!<br>Hasło to "+haslo+"</span>";
+    document.getElementById("klawiatura").innerHTML="<span id=wygrana>Zgadłeś!<br>Hasło to<br>"+haslo+"</span>";
 }
