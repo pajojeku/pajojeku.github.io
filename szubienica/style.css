@@ -1,5 +1,5 @@
 HTML {
-    transform: scale(1.0);
+    transform: scale(0.9);
 }
 
 body {
@@ -13,6 +13,10 @@ body {
     text-align: center;
 }
 
+#stan {
+    width: 576px;
+}
+
 img {
     background: none;
     border-radius: 12px;
@@ -21,7 +25,7 @@ img {
 }
 
 #tytul {
-    font-size: 40px;
+    font-size: 30px;
     letter-spacing: 5px;
     font-variant: small-caps;
     font-family: 'Open Sans', sans-serif;
@@ -77,10 +81,10 @@ img {
 }
 
 .przycisk {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     margin: 4px;
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 500;
     border-radius: 12px;
