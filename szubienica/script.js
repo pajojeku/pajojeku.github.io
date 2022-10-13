@@ -24,7 +24,7 @@ function start() {
     {
         literyKlawiatury+="<input type=\"button\" class=\"przycisk\" value=\""+litery[i]+"\" id=\"p"+litery[i]+"\" onclick=\"klik("+i+")\">"
 
-        if(i==7 || i==15 || i==23 || i==31) 
+        if(i==6 || i==13 || i==20 || i==27) 
         literyKlawiatury+="<br>"
     }
     document.getElementById("klawiatura").innerHTML=literyKlawiatury;
