@@ -14,11 +14,11 @@ body {
 }
 
 #stan {
-    width: 100%;
+    width: 390px;
 }
 
 img {
-    width: 95%;
+    width: 390px;
     background: none;
     border-radius: 12px;
     border-color: white;
@@ -50,7 +50,7 @@ img {
 
 #slowo {
     padding-top:40px;
-    font-size: 30px;
+    font-size: 25px;
     letter-spacing: 5px;
     font-variant: small-caps;
     font-family: 'Open Sans', sans-serif;
