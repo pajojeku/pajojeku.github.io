@@ -19,11 +19,12 @@ body {
 }
 
 #stan {
-    width: 380px;
+    width: 360px;
+    height: 170px;
 }
 
 img {
-    width: 380px;
+    width: 100%;
     background: none;
     border-radius: 12px;
     border-color: white;
@@ -66,7 +67,6 @@ img {
 
 #przegrana {
     font-size: 32px;
-    padding-top:50%;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     color: red;
@@ -86,8 +86,10 @@ img {
 }
 
 .przycisk {
-    width: 48px;
-    height: 48px;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    vertical-align: middle;
     margin: 4px;
     font-size: 25px;
     font-family: 'Open Sans', sans-serif;
