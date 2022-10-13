@@ -26,3 +26,4 @@ lista[23]="TAMARYNA WĄSATA";
 lista[24]="WYJEC ÞŁASZCZOWY";
 lista[25]="WYRAK FILIPIŃSKI";
 lista[26]="WYRAK UPIORNY";
+lista[27]="BRZEZIAK";
