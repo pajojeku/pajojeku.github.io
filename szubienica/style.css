@@ -1,5 +1,5 @@
 HTML {
-    transform: scale(0.9);
+    transform: scale(1.1);
 }
 
 body {
@@ -60,7 +60,7 @@ img {
 }
 
 #przegrana {
-    font-size: 40px;
+    font-size: 32px;
     padding-top:50%;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
@@ -68,7 +68,7 @@ img {
 }
 
 #wygrana {
-    font-size: 40px;
+    font-size: 32px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     color: green;
