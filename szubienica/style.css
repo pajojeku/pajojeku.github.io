@@ -13,17 +13,11 @@ body {
     text-align: center;
 }
 
-#stan {
-    width: 500px;
-    height: 250px;
+img {
+    background: none;
     border-radius: 12px;
     border-color: white;
     border-style: solid;
-}
-
-img {
-    width: 500px;
-    height: 250px;
 }
 
 #tytul {
