@@ -13,11 +13,17 @@ body {
     text-align: center;
 }
 
-img {
-    background: none;
+#stan {
+    width: 500px;
+    height: 250px;
     border-radius: 12px;
     border-color: white;
     border-style: solid;
+}
+
+img {
+    width: 500px;
+    height: 250px;
 }
 
 #tytul {
@@ -39,7 +45,6 @@ img {
 }
 
 #szubienica {
-    
     margin: auto;
 }
 
