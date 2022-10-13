@@ -18,6 +18,7 @@ body {
 }
 
 img {
+    width: 95%;
     background: none;
     border-radius: 12px;
     border-color: white;
@@ -25,7 +26,7 @@ img {
 }
 
 #tytul {
-    font-size: 30px;
+    font-size: 50px;
     letter-spacing: 5px;
     font-variant: small-caps;
     font-family: 'Open Sans', sans-serif;
@@ -49,7 +50,7 @@ img {
 
 #slowo {
     padding-top:40px;
-    font-size: 40px;
+    font-size: 30px;
     letter-spacing: 5px;
     font-variant: small-caps;
     font-family: 'Open Sans', sans-serif;
