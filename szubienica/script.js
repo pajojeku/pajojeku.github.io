@@ -55,8 +55,8 @@ function klik(nr) {
     }
 
     if(zycie<=0)
-    document.getElementById("klawiatura").innerHTML="<br><br><br><text id=przegrana onclick=window.location.reload()>Nie zgadłeś!<br>Hasło to<br>"+haslo+"</text>";
+    document.getElementById("klawiatura").innerHTML="<br><br><text id=przegrana onclick=window.location.reload()>Nie zgadłeś!<br>Hasło to<br>"+haslo+"</text>";
 
     if(!zakreskowaneHaslo.includes("#"))
-    document.getElementById("klawiatura").innerHTML="<br><br><br><text id=wygrana onclick=window.location.reload()>Zgadłeś!<br>Hasło to<br>"+haslo+"</text>";
+    document.getElementById("klawiatura").innerHTML="<br><br><text id=wygrana onclick=window.location.reload()>Zgadłeś!<br>Hasło to<br>"+haslo+"</text>";
 }
