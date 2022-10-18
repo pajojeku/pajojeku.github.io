@@ -1,14 +1,14 @@
-var haslo=lista[Math.floor(Math.random()*lista.length)];
+var haslo="";
 var literyKlawiatury="";
 var zakreskowaneHaslo="";
 var zycie=5;
 var podpowiedz="Kategoria: "+"Małpy";
 
-window.onload = start;
-
 function start() {
+
+    haslo=document.getElementById("haselko").value;
     document.getElementById("podpowiedz").innerHTML=podpowiedz;
-    
+
     for(let i=0; i<haslo.length; i++) {
         if(haslo[i]!=" ")
         zakreskowaneHaslo+="#";
