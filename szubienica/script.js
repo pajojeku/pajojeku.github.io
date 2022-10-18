@@ -1,14 +1,12 @@
-window.onload = start;
-
 var haslo=lista[Math.floor(Math.random()*lista.length)];
 var literyKlawiatury="";
 var zakreskowaneHaslo="";
 var zycie=5;
-
 var podpowiedz="Kategoria: "+"Małpy";
 
+window.onload = start;
+
 function start() {
-    
     document.getElementById("podpowiedz").innerHTML=podpowiedz;
     
     for(let i=0; i<haslo.length; i++)
@@ -28,10 +26,10 @@ function start() {
         literyKlawiatury+="<br>"
     }
     document.getElementById("klawiatura").innerHTML=literyKlawiatury;
-    
 }
 
 function klik(nr) {
+    var litera = document.getElementById("p"+litery[nr]);
 
     if(haslo.includes(litery[nr]))
     {
@@ -41,24 +39,24 @@ function klik(nr) {
             {
                 zakreskowaneHaslo = zakreskowaneHaslo.substring(0, i) + litery[nr] + zakreskowaneHaslo.substring(i + 1);
                 document.getElementById("slowo").innerHTML=zakreskowaneHaslo;
-                document.getElementById("p"+litery[nr]).style.color="green";
-                document.getElementById("p"+litery[nr]).style.borderColor="green";
-                document.getElementById("p"+litery[nr]).setAttribute("onclick",";");
+                litera.style.color="green";
+                litera.style.borderColor="green";
+                litera.setAttribute("onclick",";");
             }
         }
     }
     else
     {
-        document.getElementById("p"+litery[nr]).style.color="red";
-        document.getElementById("p"+litery[nr]).style.borderColor="red";
-        document.getElementById("p"+litery[nr]).setAttribute("onclick",";");
+        litera.style.color="red";
+        litera.style.borderColor="red";
+        litera.setAttribute("onclick",";");
         zycie-=1;
         document.getElementById("stan").innerHTML="<img src="+zycie+".png>";
     }
 
     if(zycie<=0)
-    document.getElementById("klawiatura").innerHTML="<text id=przegrana>Nie zgadłeś!<br>Hasło to<br>"+haslo+"</text>";
+    document.getElementById("klawiatura").innerHTML="<text id=przegrana onclick=window.location.reload()>Nie zgadłeś!<br>Hasło to<br>"+haslo+"</text>";
 
     if(!zakreskowaneHaslo.includes("#"))
-    document.getElementById("klawiatura").innerHTML="<text id=wygrana>Zgadłeś!<br>Hasło to<br>"+haslo+"</text>";
+    document.getElementById("klawiatura").innerHTML="<text id=wygrana onclick=window.location.reload()>Zgadłeś!<br>Hasło to<br>"+haslo+"</text>";
 }
