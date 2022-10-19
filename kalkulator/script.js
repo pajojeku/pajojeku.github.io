@@ -3,8 +3,13 @@
 function klik(nr) {
     var wyswietlacz = document.getElementById("wyswietlacz");
     var nowe = document.getElementById(nr).value;
-
-    wyswietlacz.innerHTML+=nowe;
+    if(wyswietlacz.innerHTML.length<12) {
+        wyswietlacz.style.color="whitesmoke";
+        wyswietlacz.innerHTML+=nowe;
+    }
+    
+    else
+    wyswietlacz.style.color="red";
 }
 
 function wynik() {
