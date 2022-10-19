@@ -9,5 +9,5 @@ function klik(nr) {
 
 function wynik() {
     var str = wyswietlacz.innerHTML;
-    wyswietlacz.innerHTML=eval(str);
+    wyswietlacz.innerHTML=Math.round(eval(str)*100000)/100000;
 }
