@@ -11,27 +11,29 @@ function start() {
 }
 
 function rozpocznij() {
-    generujTabelke(ile, "polaKomputera","red");
+    if(statki==0) {
+        generujTabelke(ile, "polaKomputera","red");
 
-    var tablica=[];
-    for(k=0; k<15; k++) {
-        flaga=false;
-        while(flaga==false) {
-            h=String.fromCharCode(Math.floor(Math.random() * (10 + 1)+1)+64);
-            z=Math.floor(Math.random() * (10)+1);
-
-            if(!tablica.includes(h+z)) {
-                tablica+=toString((h+z));
-                flaga=true;
+        var tablica=[];
+        for(k=0; k<15; k++) {
+            flaga=false;
+            while(flaga==false) {
+                h=String.fromCharCode(Math.floor(Math.random() * (10 + 1)+1)+64);
+                z=Math.floor(Math.random() * (10)+1);
+    
+                if(!tablica.includes(h+z)) {
+                    tablica+=toString((h+z));
+                    flaga=true;
+                }
             }
+            if(d.getElementById("polaKomputera"+h+z)!=null) {
+                d.getElementById("polaKomputera"+h+z).innerHTML="X";
+                d.getElementById("polaKomputera"+h+z).style.fontSize="0.00001px";
+            }
+            
         }
-        if(d.getElementById("polaKomputera"+h+z)!=null) {
-            d.getElementById("polaKomputera"+h+z).innerHTML="X";
-            d.getElementById("polaKomputera"+h+z).style.fontSize="0.00001px";
-        }
-        
     }
-    statki=0;
+
 }
 
 function klik(x) {
