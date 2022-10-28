@@ -1,18 +1,17 @@
 window.onload=start;
 var d = document;
-var ile=10;
-
 var statki=15;
 var zycia=statki;
+var statkiWroga=statki;
 function start() {
     
-    generujTabelke(ile, "polaGracza", "cyan");
+    generujTabelke(10, "polaGracza", "cyan");
 
 }
 
 function rozpocznij() {
     if(statki==0) {
-        generujTabelke(ile, "polaKomputera","red");
+        generujTabelke(10, "polaKomputera","red");
 
         var tablica=[];
         for(k=0; k<15; k++) {
@@ -62,8 +61,9 @@ function klik(x) {
                 if(!d.getElementById("polaGracza"+h+z).innerHTML.includes("X")) {
                     flaga=true;
                     if(d.getElementById("polaGracza"+h+z).style.backgroundColor=="whitesmoke") {
-                        d.getElementById("polaGracza"+h+z).style.backgroundColor="orange";
+                        d.getElementById("polaGracza"+h+z).style.backgroundColor="red";
                         d.getElementById("polaGracza"+h+z).innerHTML="X";
+                        d.getElementById("polaKomputera"+h+z).style.fontSize="0.00001px";
                         zycia--;
                         flaga=false;
                     }
