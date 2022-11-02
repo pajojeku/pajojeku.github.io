@@ -27,7 +27,7 @@ function rozpocznij() {
             }
             if(d.getElementById("polaKomputera"+h+z)!=null) {
                 d.getElementById("polaKomputera"+h+z).innerHTML="X";
-                d.getElementById("polaKomputera"+h+z).style.fontSize="0.00001px";
+                d.getElementById("polaKomputera"+h+z).style.textIndent="-999999px";
             }
             
         }
@@ -36,8 +36,8 @@ function rozpocznij() {
 }
 
 function klik(x) {
-    if(zycia==0)
-    window.location.reload;
+    d.getElementById("strzalyKomputera").innerHTML="";
+    d.getElementById("strzalyGracza").innerHTML="";
 
     if(statki>0 && x.includes("Gracz") && statki>0 && d.getElementById(x).style.backgroundColor!="whitesmoke") {
         d.getElementById(x).style.backgroundColor="whitesmoke";
@@ -46,9 +46,13 @@ function klik(x) {
     }
     else if(x.includes("Komputer") && d.getElementById(x).innerHTML=="X") {
         d.getElementById(x).style.backgroundColor="red";
+        d.getElementById("strzalyGracza").innerHTML=x.replace("polaKomputera","")+" ";
     }
     else if(x.includes("Komputer") && !d.getElementById(x).innerHTML.includes("X") && !d.getElementById(x).innerHTML.includes("x")){
+    {
         d.getElementById(x).innerHTML="<text style='color: darkgray'>x</text>";
+        d.getElementById("strzalyGracza").innerHTML=x.replace("polaKomputera","")+" ";
+    }   
 
 
         for(k=0; k<1; k++) {
@@ -62,15 +66,19 @@ function klik(x) {
                     flaga=true;
                     if(d.getElementById("polaGracza"+h+z).style.backgroundColor=="whitesmoke") {
                         d.getElementById("polaGracza"+h+z).style.backgroundColor="red";
-                        d.getElementById("polaGracza"+h+z).innerHTML="X";
-                        d.getElementById("polaKomputera"+h+z).style.fontSize="0.00001px";
+                      //  d.getElementById("polaGracza"+h+z).innerHTML="X";
+                        d.getElementById("polaGracza"+h+z).style.textIndent="-999999px";
                         zycia--;
                         flaga=false;
+                        d.getElementById("strzalyKomputera").innerHTML+=(h+z)+" ";
                     }
                 }
             }
-            if(d.getElementById("polaGracza"+h+z)!=undefined)
-            d.getElementById("polaGracza"+h+z).innerHTML="X";
+            if(d.getElementById("polaGracza"+h+z)!=undefined) {
+                d.getElementById("polaGracza"+h+z).innerHTML="X";
+                d.getElementById("strzalyKomputera").innerHTML+=(h+z)+" ";
+            }
+            
         }
     }
 }

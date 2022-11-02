@@ -71,3 +71,11 @@ td {
     margin-right: 5px;
     height: 30px;
 }
+#strzalyGracza{
+    float:left;
+    width: 50%;
+}
+#strzalyKomputera{
+    float:left;
+    width: 50%;
+}
