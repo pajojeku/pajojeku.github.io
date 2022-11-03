@@ -1,4 +1,5 @@
 body {
+    margin-top: 100px;
     background-color: #111;
     color: whitesmoke;
     font-size: 25px;
@@ -47,6 +48,7 @@ td {
     float: left;
 }
 #container {
+    margin-top: 100px;
     padding-top: 40px;
     text-align: center;
     margin: auto;

@@ -3,14 +3,13 @@ function element(id) {
     return document.getElementById(id);
 }
 
-var statkiGracza=[];
-
-
-
 function start() {
     generujTabelke("polaGracza", "cyan");
 }
+
+var statkiGracza=[];
 var zolte=[];
+
 function allowDrop(ev) {
     ev.preventDefault();
 
@@ -27,7 +26,7 @@ function allowDrop(ev) {
     if(data=="drag1" || data=="drag2" || data=="drag3") {
         nowy = ev.target.id.replace(ev.target.id.slice(-1), parseInt(ev.target.id.slice(-1))+1);
     
-        if((parseInt(ev.target.id.slice(-1))+1)<=10) {
+        if((parseInt(ev.target.id.slice(-1)))!=0) {
             zolte.push(element(ev.target.id));
             zolte.push(element(nowy));
         }
@@ -35,12 +34,21 @@ function allowDrop(ev) {
     else if(data=="drag4" || data=="drag5") {
         nowy = ev.target.id.replace(ev.target.id.slice(-1), parseInt(ev.target.id.slice(-1))+1);
         nowy2 = ev.target.id.replace(ev.target.id.slice(-1), parseInt(ev.target.id.slice(-1))+2);
-        if((parseInt(ev.target.id.slice(-1))+2)<=10) {
+        if((parseInt(ev.target.id.slice(-1)))!=(0||9)) {
             zolte.push(element(ev.target.id));
             zolte.push(element(nowy));
             zolte.push(element(nowy2));
         }
     }
+    else if(data=="drag6" || data=="drag7") {
+            zolte.push(element(ev.target.id));
+            zolte.push(element(zKoord(getX(ev.target.id, 1),getY(ev.target.id))));
+            zolte.push(element(zKoord(getX(ev.target.id, 2),getY(ev.target.id))));
+    }
+    else if(data=="drag8" || data=="drag9" || data=="drag10") {
+        zolte.push(element(ev.target.id));
+        zolte.push(element(zKoord(getX(ev.target.id, 1),getY(ev.target.id))));
+}
 
     for(i=0; i<zolte.length; i++) {
         if(zolte[i].style.backgroundColor!="gray")
@@ -60,10 +68,10 @@ function drop(ev) {
 
     if(data=="drag1" || data=="drag2" || data=="drag3") {
         cyfra=ev.target.id.slice(-1);
-        if((parseInt(ev.target.id.slice(-1))+2)<=10) {
+        if((parseInt(ev.target.id.slice(-1)))!=0) {
         statkiGracza.push(ev.target.id);
         statkiGracza.push(ev.target.id.replace(cyfra, parseInt(cyfra)+1));
-        
+
         element(data).setAttribute("draggable", "false");
         element(data).style.visibility="hidden";
         }
@@ -71,11 +79,30 @@ function drop(ev) {
     else if(data=="drag4" || data=="drag5") {
         nowy = ev.target.id.replace(ev.target.id.slice(-1), parseInt(ev.target.id.slice(-1))+1);
         nowy2 = ev.target.id.replace(ev.target.id.slice(-1), parseInt(ev.target.id.slice(-1))+2);
-        if((parseInt(ev.target.id.slice(-1))+2)<=10) {
+        if((parseInt(ev.target.id.slice(-1)))!=(0||9)) {
             statkiGracza.push(ev.target.id);
             statkiGracza.push(nowy);
             statkiGracza.push(nowy2);
 
+            element(data).setAttribute("draggable", "false");
+            element(data).style.visibility="hidden";
+        }
+    }
+    else if(data=="drag6" || data=="drag7") {
+        if(getX(ev.target.id, 2)<="J") {
+            statkiGracza.push(ev.target.id);
+            statkiGracza.push(zKoord(getX(ev.target.id, 1),getY(ev.target.id)));
+            statkiGracza.push(zKoord(getX(ev.target.id, 2),getY(ev.target.id)));
+    
+            element(data).setAttribute("draggable", "false");
+            element(data).style.visibility="hidden";
+        }
+    }
+    else if(data=="drag8" || data=="drag9" || data=="drag10") {
+        if(getX(ev.target.id, 1)<="J") {
+            statkiGracza.push(ev.target.id);
+            statkiGracza.push(zKoord(getX(ev.target.id, 1),getY(ev.target.id)));
+    
             element(data).setAttribute("draggable", "false");
             element(data).style.visibility="hidden";
         }
@@ -87,6 +114,27 @@ function drop(ev) {
     }
     
 }
+
+function getX(zrodlo, x) {
+
+    if(zrodlo[zrodlo.length-2]==1)
+        b=(zrodlo[zrodlo.length-3]).charCodeAt(0)+x;
+    else
+        b=(zrodlo[zrodlo.length-2]).charCodeAt(0)+x;
+
+    return String.fromCharCode(b);
+}
+function getY(zrodlo) {
+    if(zrodlo[zrodlo.length-2]==1)
+        return zrodlo.slice(-2);
+    else
+    return zrodlo.slice(-1);
+}
+
+function zKoord(x,y) {
+    return "polaGracza"+x+y;
+}
+
 
 function rozpocznij() {
         generujTabelke("polaKomputera","red");
