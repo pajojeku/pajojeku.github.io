@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <link rel="stylesheet" href="style.css" >
-<script src="script.js"></script>
 <body>
-    <div onclick="window.location.reload();" style="text-align:center; font-size:60px; margin-top:30px; text">STATKI</div>
+    <center>
+    <div onclick="window.location.reload();" style="text-align:center; font-size:60px; margin-top:30px">STATKI</div>
+    </center>
 <div id="container">
     <div id="polaKomputera">
-        <div id="statki">
+        <div id="statki"><center>
             <table style="display: flex; background-color: gray; margin-right: 10px; float: left" id="drag1" class="double" draggable="true" ondragstart="drag(event)"><tr><td></td></tr><tr><td></td></td></tr></table>
             <table style="display: flex; background-color: gray; margin-right: 10px; float: left" id="drag2" class="double" draggable="true" ondragstart="drag(event)"><tr><td></td></tr><tr><td></td></td></tr></table>
             <table style="display: flex; background-color: gray; margin-right: 10px; float: left" id="drag3" class="double" draggable="true" ondragstart="drag(event)"><tr><td></td></tr><tr><td></td></td></tr></table>
@@ -18,12 +19,15 @@
             <table style="margin-top: 10px; display: flex; background-color: gray; margin-right: 10px; float: left" id="drag8" class="vdouble" draggable="true" ondragstart="drag(event)"><tr><td><td></td></td></tr></table>
             <table style="margin-top: 10px; display: flex; background-color: gray; margin-right: 10px; float: left" id="drag9" class="vdouble" draggable="true" ondragstart="drag(event)"><tr><td><td></td></td></tr></table>
             <table style="margin-top: 10px; display: flex; background-color: gray; float: left" id="drag10" class="vdouble" draggable="true" ondragstart="drag(event)"><tr><td><td></td></td></tr></table>
+            </center>
             <br><br><br>
             <br><br><br>
-            <input style="font-family: 'Ubuntu', sans-serif;" type="button" id="rozpocznij"value="ROZPOCZNIJ" onclick="rozpocznij()">
+            Rozstaw statki i <br>
+            <input type="button" id="rozpocznij"value="ROZPOCZNIJ" onclick="rozpocznij()">
         </div>
     </div>
     <div id="polaGracza"></div>
     <div id="strzalyGracza"></div>
     <div id="strzalyKomputera"></div>
 </div>
+<script src="script.js"></script>
