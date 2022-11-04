@@ -7,6 +7,42 @@ function start() {
     generujTabelke("polaGracza", "#EE6123");
 }
 
+
+
+function rozpocznij() {
+        generujTabelke("polaKomputera","red");
+
+}
+
+async function klik(x) {
+    kolejGracza=true;
+    if(kolejGracza)
+        if(x.includes("polaKomputera")) {
+        element(x).innerHTML="X";
+        kolejGracza=false;
+        }
+    if(!kolejGracza) {
+        let powtorki=true;
+        while(powtorki) {
+            await new Promise(resolve => setTimeout(resolve, 400));
+            x=String.fromCharCode(Math.floor(Math.random() * (10))+65);
+            y=Math.floor(Math.random() * (10)+1);
+            e = element("polaGracza"+x+y);
+            if(!e.innerHTML.includes("X")) {
+                element("polaGracza"+x+y).innerHTML+="X";
+                powtorki=false;
+                if(e.style.backgroundColor=="gray") {
+                    powtorki=true;
+                    e.style.backgroundColor="red";
+                }
+                else
+                powtorki=false;
+            }
+        }
+    }
+}
+
+
 var statkiGracza=[];
 var zolte=[];
 
@@ -18,7 +54,6 @@ function allowDrop(ev) {
         zolte[i].style.background="none";
     }
     
-    
     zolte=[];
 
     data = ev.dataTransfer.getData("text");
@@ -27,7 +62,9 @@ function allowDrop(ev) {
         nowy = ev.target.id.replace(ev.target.id.slice(-1), parseInt(ev.target.id.slice(-1))+1);
     
         if((parseInt(ev.target.id.slice(-1)))!=0) {
+            if(element(ev.target.id)!=null)
             zolte.push(element(ev.target.id));
+            if(element(nowy)!=null)
             zolte.push(element(nowy));
         }
     }
@@ -35,24 +72,32 @@ function allowDrop(ev) {
         nowy = ev.target.id.replace(ev.target.id.slice(-1), parseInt(ev.target.id.slice(-1))+1);
         nowy2 = ev.target.id.replace(ev.target.id.slice(-1), parseInt(ev.target.id.slice(-1))+2);
         if((parseInt(ev.target.id.slice(-1)))!=(0||9)) {
+            if(element(ev.target.id)!=null)
             zolte.push(element(ev.target.id));
+            if(element(nowy)!=null)
             zolte.push(element(nowy));
+            if(element(nowy2)!=null)
             zolte.push(element(nowy2));
         }
     }
     else if(data=="drag6" || data=="drag7") {
+            if(element(ev.target.id)!=null)
             zolte.push(element(ev.target.id));
+            if(element(zKoord(getX(ev.target.id, 1),getY(ev.target.id)))!=null)
             zolte.push(element(zKoord(getX(ev.target.id, 1),getY(ev.target.id))));
+            if(element(zKoord(getX(ev.target.id, 2),getY(ev.target.id)))!=null)
             zolte.push(element(zKoord(getX(ev.target.id, 2),getY(ev.target.id))));
     }
     else if(data=="drag8" || data=="drag9" || data=="drag10") {
+        if(element(ev.target.id)!=null)
         zolte.push(element(ev.target.id));
+        if(element(zKoord(getX(ev.target.id, 1),getY(ev.target.id)))!=null)
         zolte.push(element(zKoord(getX(ev.target.id, 1),getY(ev.target.id))));
 }
 
     for(i=0; i<zolte.length; i++) {
         if(zolte[i].style.backgroundColor!="gray")
-        zolte[i].style.backgroundColor="#FCF4A3";
+        zolte[i].style.backgroundColor="rgba(255, 255, 255, 0.900)";
     }
     
 }
@@ -116,6 +161,7 @@ function drop(ev) {
         element(statkiGracza[i]).setAttribute("ondragover", ";");
     }
     
+    
 }
 
 function getX(zrodlo, x) {
@@ -136,16 +182,6 @@ function getY(zrodlo) {
 
 function zKoord(x,y) {
     return "polaGracza"+x+y;
-}
-
-
-function rozpocznij() {
-        generujTabelke("polaKomputera","red");
-
-}
-
-function klik(x) {
-    //rozpocznij();
 }
 
 
