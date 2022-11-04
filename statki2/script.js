@@ -4,7 +4,7 @@ function element(id) {
 }
 
 function start() {
-    generujTabelke("polaGracza", "cyan");
+    generujTabelke("polaGracza", "#EE6123");
 }
 
 var statkiGracza=[];
@@ -52,7 +52,7 @@ function allowDrop(ev) {
 
     for(i=0; i<zolte.length; i++) {
         if(zolte[i].style.backgroundColor!="gray")
-        zolte[i].style.backgroundColor="yellow";
+        zolte[i].style.backgroundColor="#FCF4A3";
     }
     
 }
@@ -68,7 +68,7 @@ function drop(ev) {
 
     if(data=="drag1" || data=="drag2" || data=="drag3") {
         cyfra=ev.target.id.slice(-1);
-        if((parseInt(ev.target.id.slice(-1)))!=0) {
+        if((parseInt(ev.target.id.slice(-1)))!=0 && !statkiGracza.includes(ev.target.id.replace(cyfra, parseInt(cyfra)+1))) {
         statkiGracza.push(ev.target.id);
         statkiGracza.push(ev.target.id.replace(cyfra, parseInt(cyfra)+1));
 
@@ -79,7 +79,7 @@ function drop(ev) {
     else if(data=="drag4" || data=="drag5") {
         nowy = ev.target.id.replace(ev.target.id.slice(-1), parseInt(ev.target.id.slice(-1))+1);
         nowy2 = ev.target.id.replace(ev.target.id.slice(-1), parseInt(ev.target.id.slice(-1))+2);
-        if((parseInt(ev.target.id.slice(-1)))!=(0||9)) {
+        if((parseInt(ev.target.id.slice(-1)))!=(0||9) && !statkiGracza.includes(nowy2) && !statkiGracza.includes(nowy)) {
             statkiGracza.push(ev.target.id);
             statkiGracza.push(nowy);
             statkiGracza.push(nowy2);
@@ -89,19 +89,22 @@ function drop(ev) {
         }
     }
     else if(data=="drag6" || data=="drag7") {
-        if(getX(ev.target.id, 2)<="J") {
+        nowy=zKoord(getX(ev.target.id, 1),getY(ev.target.id));
+        nowy2=zKoord(getX(ev.target.id, 2),getY(ev.target.id));
+        if(getX(ev.target.id, 2)<="J" && !statkiGracza.includes(nowy2) && !statkiGracza.includes(nowy)) {
             statkiGracza.push(ev.target.id);
-            statkiGracza.push(zKoord(getX(ev.target.id, 1),getY(ev.target.id)));
-            statkiGracza.push(zKoord(getX(ev.target.id, 2),getY(ev.target.id)));
+            statkiGracza.push(nowy);
+            statkiGracza.push(nowy2);
     
             element(data).setAttribute("draggable", "false");
             element(data).style.visibility="hidden";
         }
     }
     else if(data=="drag8" || data=="drag9" || data=="drag10") {
-        if(getX(ev.target.id, 1)<="J") {
+        nowy=zKoord(getX(ev.target.id, 1),getY(ev.target.id));
+        if(getX(ev.target.id, 1)<="J" && !statkiGracza.includes(nowy)) {
             statkiGracza.push(ev.target.id);
-            statkiGracza.push(zKoord(getX(ev.target.id, 1),getY(ev.target.id)));
+            statkiGracza.push(nowy);
     
             element(data).setAttribute("draggable", "false");
             element(data).style.visibility="hidden";
