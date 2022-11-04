@@ -7,6 +7,7 @@ body {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
     cursor: default;
+    user-select: none;
 }
 #drag1:hover, #drag2:hover, #drag3:hover, #drag4:hover, #drag5:hover, #drag6:hover, #drag7:hover, #drag8:hover, #drag9:hover, #drag10:hover {
     transform: scale(1.1);

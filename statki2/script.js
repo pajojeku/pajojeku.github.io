@@ -2,12 +2,15 @@ window.onload=start;
 function element(id) {
     return document.getElementById(id);
 }
+var trafione=[];
+var kolejGracza=true;
+var flaga=true;
+var statkiGracza=[];
+var zolte=[];
 
 function start() {
     generujTabelke("polaGracza", "#EE6123");
 }
-
-
 
 function rozpocznij() {
         generujTabelke("polaKomputera","red");
@@ -15,36 +18,41 @@ function rozpocznij() {
 }
 
 async function klik(x) {
-    kolejGracza=true;
-    if(kolejGracza)
-        if(x.includes("polaKomputera")) {
-        element(x).innerHTML="X";
-        kolejGracza=false;
-        }
-    if(!kolejGracza) {
-        let powtorki=true;
-        while(powtorki) {
-            await new Promise(resolve => setTimeout(resolve, 400));
-            x=String.fromCharCode(Math.floor(Math.random() * (10))+65);
-            y=Math.floor(Math.random() * (10)+1);
-            e = element("polaGracza"+x+y);
-            if(!e.innerHTML.includes("X")) {
-                element("polaGracza"+x+y).innerHTML+="X";
-                powtorki=false;
-                if(e.style.backgroundColor=="gray") {
-                    powtorki=true;
-                    e.style.backgroundColor="red";
-                }
-                else
-                powtorki=false;
+    if(flaga) {
+        flaga=false;
+        if(kolejGracza)
+            if(x.includes("polaKomputera")) {
+            element(x).innerHTML="X";
+            kolejGracza=false;
             }
+        if(!kolejGracza) {
+            let powtorki=true;
+            while(powtorki) {
+                
+                x=String.fromCharCode(Math.floor(Math.random() * (10))+65);
+                y=Math.floor(Math.random() * (10)+1);
+                e = element("polaGracza"+x+y);
+                if(!e.innerHTML.includes("X")) {
+                    await new Promise(resolve => setTimeout(resolve, 600));
+                    element("polaGracza"+x+y).innerHTML+="X";
+                    powtorki=false;
+                    if(e.style.backgroundColor=="gray") {
+                        powtorki=true;
+                        e.style.backgroundColor="red";
+                        if(statkiGracza.length==trafione.length)
+                        if(window.confirm("PRZEGRALES!"));
+                        element("container").innerHTML="Przegrales!";
+                    }
+                    else
+                    powtorki=false;
+                }
+            }
+            kolejGracza=true;
         }
+        flaga=true;
     }
 }
 
-
-var statkiGracza=[];
-var zolte=[];
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -160,8 +168,6 @@ function drop(ev) {
         element(statkiGracza[i]).style.backgroundColor="gray";
         element(statkiGracza[i]).setAttribute("ondragover", ";");
     }
-    
-    
 }
 
 function getX(zrodlo, x) {
