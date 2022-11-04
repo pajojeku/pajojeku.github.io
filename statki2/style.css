@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap');
 body {
     margin-top: 100px;
-    background-color: #111;
+    background-color: #1A181B;
     color: whitesmoke;
     font-size: 25px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    cursor: default;
+}
+#drag1:hover, #drag2:hover, #drag3:hover, #drag4:hover, #drag5:hover, #drag6:hover, #drag7:hover, #drag8:hover, #drag9:hover, #drag10:hover {
+    transform: scale(1.1);
 }
 table {
     border-collapse: collapse;
@@ -11,6 +17,7 @@ table {
     border-style: solid;
     margin: auto;
     float:left;
+    border-color: #EFE6DD;
 }
 .pole {
     background: none;
@@ -18,6 +25,7 @@ table {
     padding: 0;margin: 0;
     width: 100%;
     height: 100%;
+    border-color: #EFE6DD;
 }
 .pole:hover {
     background-color: rgba(255, 255, 255, 0.103);
@@ -30,6 +38,7 @@ td {
     width: 30px;
     height: 30px;
     margin: 0;
+    
 }
 
 #polaKomputera {
@@ -80,4 +89,7 @@ td {
 #strzalyKomputera{
     float:left;
     width: 50%;
+}
+#statki {
+    text-align: center;
 }
