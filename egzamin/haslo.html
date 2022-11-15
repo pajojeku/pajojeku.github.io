@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styl.css">
+        <title>Miernik jakości hasła</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="baner">
+                <a href="index.html"><h1>Sprawdz swoje hasło!</h1></a>
+            </div>
+            <div id="panel_lewy">
+                <h2>
+                    Wybierz
+                </h2>
+                <ol type="1">
+                    <li><a href="haslo.html">Sprawdz hasło</a></li>
+                    <li><a href="zasady.html">Zasady tworzenia hasła</a></li>
+                </ol>
+            </div>
+            <div id="panel_prawy">
+                <p>Twoje hasło: 
+                    <input type="password" id="haslo">
+                    <input type="submit" value="Sprawdź" onclick="sprawdz()">
+                </p>
+                <div id="wynik">
+                    <p style="color:red">WPISZ HASŁO!</p>
+                </div>
+            </div>
+            <div id="stopka">
+                <h3>Miernik jakości hasła</h3>
+                <p>Stronę opracował: 1231230000</p>
+            </div>
+        </div>
+        <script>
+            function sprawdz() {
+                let haslo = document.getElementById("haslo").value;
+                let wynik = document.getElementById("wynik");
+                
+                if(haslo==0)
+                wynik.innerHTML='<p style="color:red">WPISZ HASŁO!</p>';
+                else if(haslo.length>=7 && /[0-9]/.test(haslo))
+                wynik.innerHTML='<p style="color:green">DOBRE</p>';
+                else if(haslo.length>=4 && haslo.length<=6 && /[0-9]/.test(haslo))
+                wynik.innerHTML='<p style="color:blue">ŚREDNIE</p>';
+                else
+                wynik.innerHTML='<p style="color:yellow">SŁABE</p>';
+            }
+        </script>
+    </body>
+</html>

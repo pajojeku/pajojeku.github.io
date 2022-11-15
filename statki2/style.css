@@ -8,9 +8,12 @@ body {
     font-weight: 700;
     cursor: default;
     user-select: none;
+    /*transform: scale(1.4);*/
+    overflow: hidden; 
 }
 #drag1:hover, #drag2:hover, #drag3:hover, #drag4:hover, #drag5:hover, #drag6:hover, #drag7:hover, #drag8:hover, #drag9:hover, #drag10:hover {
     transform: scale(1.1);
+    transition: 0.1s;
 }
 table {
     border-collapse: collapse;
@@ -86,6 +89,7 @@ td {
 }
 #rozpocznij:hover {
     transform: scale(1.1);  
+    transition: 0.08s;
 }
 
 #statki {

@@ -13,35 +13,34 @@ function start() {
 }
 
 function rozpocznij() {
-        generujTabelke("polaKomputera","red");
-
+    generujTabelke("polaKomputera","red");
 }
 
 async function klik(x) {
+    if(element(x).innerHTML=="")
     if(flaga) {
         flaga=false;
         if(kolejGracza)
-            if(x.includes("polaKomputera")) {
-            element(x).innerHTML="X";
+        if(x.includes("polaKomputera")) {
+            element(x).innerHTML="•";
             kolejGracza=false;
-            }
+        }
         if(!kolejGracza) {
             let powtorki=true;
             while(powtorki) {
-                
                 x=String.fromCharCode(Math.floor(Math.random() * (10))+65);
                 y=Math.floor(Math.random() * (10)+1);
                 e = element("polaGracza"+x+y);
-                if(!e.innerHTML.includes("X")) {
+                if(e.innerHTML=="") {
                     await new Promise(resolve => setTimeout(resolve, 600));
-                    element("polaGracza"+x+y).innerHTML+="X";
+                    e.innerHTML+="•";
                     powtorki=false;
                     if(e.style.backgroundColor=="gray") {
+                        e.innerHTML="X";
                         powtorki=true;
                         e.style.backgroundColor="red";
-                        if(statkiGracza.length==trafione.length)
-                        if(window.confirm("PRZEGRALES!"));
-                        element("container").innerHTML="Przegrales!";
+                        console.log(statkiGracza.length);
+                        console.log(trafione.length)
                     }
                     else
                     powtorki=false;
@@ -52,7 +51,6 @@ async function klik(x) {
         flaga=true;
     }
 }
-
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -101,13 +99,12 @@ function allowDrop(ev) {
         zolte.push(element(ev.target.id));
         if(element(zKoord(getX(ev.target.id, 1),getY(ev.target.id)))!=null)
         zolte.push(element(zKoord(getX(ev.target.id, 1),getY(ev.target.id))));
-}
+    }
 
     for(i=0; i<zolte.length; i++) {
         if(zolte[i].style.backgroundColor!="gray")
         zolte[i].style.backgroundColor="rgba(255, 255, 255, 0.900)";
     }
-    
 }
 
 function drag(ev) {
@@ -117,7 +114,6 @@ function drag(ev) {
 function drop(ev) {
     ev.preventDefault();
     data = ev.dataTransfer.getData("text");
-
 
     if(data=="drag1" || data=="drag2" || data=="drag3") {
         cyfra=ev.target.id.slice(-1);
@@ -163,7 +159,6 @@ function drop(ev) {
             element(data).style.visibility="hidden";
         }
     }
-
     for(i=0; i<statkiGracza.length; i++) {
         element(statkiGracza[i]).style.backgroundColor="gray";
         element(statkiGracza[i]).setAttribute("ondragover", ";");
@@ -171,7 +166,6 @@ function drop(ev) {
 }
 
 function getX(zrodlo, x) {
-
     if(zrodlo[zrodlo.length-2]==1)
         b=(zrodlo[zrodlo.length-3]).charCodeAt(0)+x;
     else
@@ -189,7 +183,6 @@ function getY(zrodlo) {
 function zKoord(x,y) {
     return "polaGracza"+x+y;
 }
-
 
 function generujTabelke(nazwa, kolor) {
     var tresc="<table>";
@@ -214,7 +207,7 @@ function generujTabelke(nazwa, kolor) {
     for(let i=1; i<=10; i++){
         for(let j=0; j<10; j++) {
             var x= String.fromCharCode(i+64)+(j+1);
-            element(nazwa+x).addEventListener("click", function() {klik(nazwa+String.fromCharCode(i+64)+(j+1));});
+            element(nazwa+x).addEventListener("click", function() {klik(nazwa+String.fromCharCode(i+64)+(j+1));}, true);
             element(nazwa+x).setAttribute("ondrop", "drop(event)");
             element(nazwa+x).setAttribute("ondragover", "allowDrop(event)");
         }
