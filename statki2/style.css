@@ -11,6 +11,18 @@ body {
     /*transform: scale(1.4);*/
     overflow: hidden; 
 }
+#baner {
+    font-size: 60px;
+    background: -webkit-linear-gradient(#00ccff, #008cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+
+}
+#baner:hover {
+    transform: scale(1.05);
+
+}
 #drag1:hover, #drag2:hover, #drag3:hover, #drag4:hover, #drag5:hover, #drag6:hover, #drag7:hover, #drag8:hover, #drag9:hover, #drag10:hover {
     transform: scale(1.1);
     transition: 0.1s;

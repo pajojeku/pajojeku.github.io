@@ -9,7 +9,7 @@ var statkiGracza=[];
 var zolte=[];
 
 function start() {
-    generujTabelke("polaGracza", "#EE6123");
+    generujTabelke("polaGracza", "#00ccff");
 }
 
 function rozpocznij() {
