@@ -8,7 +8,6 @@ body {
     font-weight: 700;
     cursor: default;
     user-select: none;
-    /*transform: scale(1.4);*/
     overflow: hidden; 
 }
 #baner {
@@ -46,6 +45,9 @@ table {
 }
 .pole:hover {
     background-color: rgba(255, 255, 255, 0.103);
+}
+.aktualnePole {
+    background-color: red;
 }
 td {
     border-collapse: collapse;
