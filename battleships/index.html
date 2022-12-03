@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css" >
+
+<center>
+<div id="baner" onclick="window.location.reload()">STATKI</div>
+<div id="container">
+    <div id="polaKomputeraPlansza">
+        <div id="statki">
+            <center>
+            <!--
+                4 jednomasztowe
+                3 dwumasztowe
+                2 trzymasztowe
+                1 czteromasztowiec
+            -->  
+            <table class="pionek" name="pojedynczy" onclick="wybierz(1)"><tr><td></td></tr></table> <div id="jednomasztowce">x4</div>
+            <br>
+            <table class="pionek" name="podwojny" onclick="wybierz(2)"><tr><td></td><td></td></tr></table> <div id="dwumasztowce">x3</div>
+            <br>
+            <table class="pionek" name="potrojny" onclick="wybierz(3)"><tr><td></td><td></td><td></td></tr></table> <div id="trzymasztowce">x2</div>
+            <br>
+            <table class="pionek" name="poczworny" onclick="wybierz(4)"><tr><td></td><td></td><td></td><td></td></tr></table> <div id="czteromasztowce">x1</div>
+            <input type="button" onclick="obrot()" value="OBRÓĆ STATEK">
+            </center>
+            <br>
+            Rozstaw statki i <br>
+            <input type="button" id="rozpocznij"value="ROZPOCZNIJ" onclick="rozpocznij()">
+            
+        </div>
+    </div>
+    <div id="polaGraczaPlansza"></div>
+    <div id="strzalyGracza"></div>
+    <div id="strzalyKomputera"></div>
+</div>
+<br>
+<center style="clear:both">Zasady gry: <a target="_blank" href="https://pppp.walbrzych.pl/gra-w-statki,185,pl">pppp.walbrzych.pl</a></center>
+<script src="script.js"></script>
