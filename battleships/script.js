@@ -4,7 +4,7 @@ function element(id) {
     return document.getElementById(id);
 }
 
-var trafione=[];
+var trafione=0;
 var kolejGracza=true;
 var flaga=true;
 var statkiGracza=[];
@@ -20,6 +20,7 @@ var trzymasztowce=2;
 var czteromasztowce=1;
 
 var moznaPostawic=false;
+var zablokowanePola=[];
 
 
 
@@ -33,6 +34,7 @@ function wybierz(nr) {
     else if(nr===4 && czteromasztowce>0)
     wybranyStatek=nr;
 }
+
 function obrot() {
     if(rotacja===0)
     rotacja=1;
@@ -72,12 +74,17 @@ function start() {
                 
                 function czysc(){
                 wybranyStatek=0;
+                for(i=0; i<niemozliwePola.length; i++)
+                {
+                    niemozliwePola[i].style.backgroundColor="#44515c";
+                }
                 for(i=0; i<podgladStatku.length; i++)
                 {
                     statkiGracza.push(podgladStatku[i]);
                     element(podgladStatku[i]).style.backgroundColor="#00ccff";
                 }
                 podgladStatku=[];
+                niemozliwePola=[];
             }
         }
 
@@ -88,6 +95,8 @@ function start() {
         pole=document.elementFromPoint(e.clientX, e.clientY);
         X=pole.getAttribute("x");
         Y=pole.getAttribute("y");
+        nX=pole.getAttribute("x");
+        nY=pole.getAttribute("y");
 
         if(rotacja===0) {
             X++;
@@ -114,26 +123,35 @@ function start() {
         
 
         podgladStatku=[];
+        niemozliwePola=[];
         moznaPostawic=false;
 
         if(pole.id.includes("polaGracza") && !pole.id.includes("Plansza")) {
             if(wybranyStatek===1 && pole!=null && pole.style.backgroundColor=="") {
                 podgladStatku.push(pole.id);
+
+                wyliczZablokowanePola(nX,nY);
             }
             if(wybranyStatek===2 && pole!=null && pole2!=null && pole.style.backgroundColor=="" && pole2.style.backgroundColor=="") {
                 podgladStatku.push(pole.id);
                 podgladStatku.push(pole2.id);
+
+                wyliczZablokowanePola(nX,nY);
             }
             if(wybranyStatek===3 && pole!=null && pole2!=null && pole3!=null && pole.style.backgroundColor=="" && pole2.style.backgroundColor=="" && pole3.style.backgroundColor=="") {
                 podgladStatku.push(pole.id);
                 podgladStatku.push(pole2.id);
                 podgladStatku.push(pole3.id);
+
+                wyliczZablokowanePola(nX,nY);
             }
             if(wybranyStatek===4 && pole!=null && pole2!=null && pole3!=null && pole4!=null && pole.style.backgroundColor=="" && pole2.style.backgroundColor=="" && pole3.style.backgroundColor=="" && pole4.style.backgroundColor=="") {
                 podgladStatku.push(pole.id);
                 podgladStatku.push(pole2.id);
                 podgladStatku.push(pole3.id);
                 podgladStatku.push(pole4.id);
+
+                wyliczZablokowanePola(nX,nY);
             }
         }
 
@@ -148,18 +166,18 @@ function start() {
       }, {passive: true})
 }
 
-function rozpocznij() {
-    if(jednomasztowce===0 && dwumasztowce===0 && trzymasztowce===0 && czteromasztowce===0)
-    generujTabelke("polaKomputera","red");
-}
-
 async function klik(x) {
-    if(element(x).innerHTML=="")
+    if(statkiGracza.length==trafione)
+        if(confirm("PRZEGRALES!"))
+        window.location.reload();
+        else
+        window.location.reload();
+    if(x.innerHTML=="")
     if(flaga) {
         flaga=false;
         if(kolejGracza)
-        if(x.includes("polaKomputera")) {
-            element(x).innerHTML="•";
+        if(x.id.includes("polaKomputera")) {
+            x.innerHTML="•";
             kolejGracza=false;
         }
         if(!kolejGracza) {
@@ -172,12 +190,11 @@ async function klik(x) {
                     await new Promise(resolve => setTimeout(resolve, 600));
                     e.innerHTML+="•";
                     powtorki=false;
-                    if(e.style.backgroundColor=="gray") {
+                    if(statkiGracza.includes(e.id)) {
                         e.innerHTML="X";
                         powtorki=true;
                         e.style.backgroundColor="red";
-                        console.log(statkiGracza.length);
-                        console.log(trafione.length)
+                        trafione++;
                     }
                     else
                     powtorki=false;
@@ -189,6 +206,32 @@ async function klik(x) {
     }
 }
 
+function wyliczZablokowanePola(nX, nY) {
+    if(rotacja===0)
+    for(i=0; i<podgladStatku.length+2; i++) {
+        for(j=0; j<3; j++)
+            if(document.querySelector('[x="'+(parseInt(nX)-1+i)+'"][y="'+(parseInt(nY)-1+j)+'"]')!=null)
+            niemozliwePola.push(
+                document.querySelector('[x="'+(parseInt(nX)-1+i)+'"][y="'+(parseInt(nY)-1+j)+'"]')
+            )
+    } 
+    else if(rotacja===1)
+    for(i=0; i<3; i++) {
+        for(j=0; j<podgladStatku.length+2; j++)
+        if(document.querySelector('[x="'+(parseInt(nX)-1+i)+'"][y="'+(parseInt(nY)-1+j)+'"]')!=null)
+        niemozliwePola.push(
+            document.querySelector('[x="'+(parseInt(nX)-1+i)+'"][y="'+(parseInt(nY)-1+j)+'"]')
+        )
+    }
+}
+
+function rozpocznij() {
+    if(jednomasztowce===0 && dwumasztowce===0 && trzymasztowce===0 && czteromasztowce===0)
+    generujTabelke("polaKomputera","red");
+
+    //else
+    //generujTabelke("polaKomputera","red");
+}
 
 function generujTabelke(nazwa, kolor) {
     var tresc="<table>";
@@ -215,6 +258,9 @@ function generujTabelke(nazwa, kolor) {
             var x= String.fromCharCode(i+64)+(j);
             element(nazwa+x).setAttribute("x",i);
             element(nazwa+x).setAttribute("y",j);
+            
+            if(nazwa.includes("polaKomputera"))
+            element(nazwa+x).setAttribute("onclick", "klik("+nazwa+x+")")
         }
     }
 }
