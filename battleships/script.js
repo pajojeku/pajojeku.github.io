@@ -225,12 +225,91 @@ function wyliczZablokowanePola(nX, nY) {
     }
 }
 
+var niemozliwePolaKomputera=[];
 function rozpocznij() {
-    if(jednomasztowce===0 && dwumasztowce===0 && trzymasztowce===0 && czteromasztowce===0)
-    generujTabelke("polaKomputera","red");
+    //if(jednomasztowce===0 && dwumasztowce===0 && trzymasztowce===0 && czteromasztowce===0){
+        generujTabelke("polaKomputera","red");
+        
 
-    //else
-    //generujTabelke("polaKomputera","red");
+        genStatekPrzeciwnika(1);
+        genStatekPrzeciwnika(1);
+        genStatekPrzeciwnika(1);
+        genStatekPrzeciwnika(1);
+
+        genStatekPrzeciwnika(2);
+        genStatekPrzeciwnika(2);
+        genStatekPrzeciwnika(2);
+
+        genStatekPrzeciwnika(3);
+        genStatekPrzeciwnika(3);
+
+        genStatekPrzeciwnika(4);
+
+
+        function genStatekPrzeciwnika(dlugoscStatku) {
+        
+        var rotacjaWroga = Math.random();
+        if (rotacjaWroga < 0.5)
+            rotacjaWroga = 0
+        else
+            rotacjaWroga= 1
+
+        losuj=true;
+
+        while(losuj) {
+            x=Math.floor(Math.random() * (10)+1);
+            y=Math.floor(Math.random() * (10)+1);
+            losuj=false;
+    
+            if(rotacjaWroga===0)
+            for(i=0; i<dlugoscStatku; i++)
+            if(document.querySelector('[x="'+(parseInt(x)+i)+'"][y="'+(parseInt(y))+'"]')==null || document.querySelector('[x="'+(parseInt(x)+i)+'"][y="'+(parseInt(y))+'"]').style.backgroundColor!="")
+            losuj=true;
+
+            if(rotacjaWroga===1)
+            for(i=0; i<dlugoscStatku; i++)
+            if(document.querySelector('[x="'+(parseInt(x))+'"][y="'+(parseInt(y)+i)+'"]')==null || document.querySelector('[x="'+(parseInt(x))+'"][y="'+(parseInt(y)+i)+'"]').style.backgroundColor!="")
+            losuj=true;
+        }
+        
+
+
+
+        if(rotacjaWroga===0)
+        for(i=0; i<dlugoscStatku+2; i++)
+            for(j=0; j<3; j++)
+                if(document.querySelector('[x="'+(parseInt(x)-1+i)+'"][y="'+(parseInt(y)-1+j)+'"]')!=null)
+                niemozliwePolaKomputera.push(
+                    document.querySelector('[x="'+(parseInt(x)-1+i)+'"][y="'+(parseInt(y)-1+j)+'"]')
+                )
+
+        if(rotacjaWroga===1)
+        for(i=0; i<3; i++)
+        for(j=0; j<dlugoscStatku+2; j++)
+            if(document.querySelector('[x="'+(parseInt(x)-1+i)+'"][y="'+(parseInt(y)-1+j)+'"]')!=null)
+            niemozliwePolaKomputera.push(
+                document.querySelector('[x="'+(parseInt(x)-1+i)+'"][y="'+(parseInt(y)-1+j)+'"]')
+            )
+        
+        for(i=0; i<niemozliwePolaKomputera.length; i++)
+            niemozliwePolaKomputera[i].style.backgroundColor="red";
+        
+        if(dlugoscStatku>0)
+        document.querySelector('[x="'+(parseInt(x))+'"][y="'+(parseInt(y))+'"]').style.backgroundColor="purple";
+
+        if(rotacjaWroga===0) {
+            for(i=1; i<dlugoscStatku; i++)
+            document.querySelector('[x="'+(parseInt(x)+i)+'"][y="'+(parseInt(y))+'"]').style.backgroundColor="purple";
+
+        }
+        else if(rotacjaWroga===1) {
+            for(i=1; i<dlugoscStatku; i++)
+            document.querySelector('[x="'+(parseInt(x))+'"][y="'+(parseInt(y)+i)+'"]').style.backgroundColor="purple";
+        }
+        niemozliwePolaKomputera=[];
+    }
+    //}
+
 }
 
 function generujTabelke(nazwa, kolor) {
