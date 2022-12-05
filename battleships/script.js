@@ -235,7 +235,13 @@ function wyliczZablokowanePola(nX, nY) {
 
 var niemozliwePolaKomputera=[];
 function rozpocznij() {
-    if(jednomasztowce===0 && dwumasztowce===0 && trzymasztowce===0 && czteromasztowce===0){
+    if(!(jednomasztowce===0 && dwumasztowce===0 && trzymasztowce===0 && czteromasztowce===0)){
+
+        for(i=1; i<=10; i++)
+        for(j=1; j<=10; j++) {
+            if(document.querySelector('[x="'+i+'"][y="'+j+'"]').style.backgroundColor!="rgb(0, 204, 255)")
+            document.querySelector('[x="'+i+'"][y="'+j+'"]').style.backgroundColor="";
+        }
         generujTabelke("polaKomputera","red");
         
 
@@ -326,6 +332,8 @@ function rozpocznij() {
 
     }
 
+    } else {
+        alert("Rozstaw wszystkie statki!");
     }
 
 }
