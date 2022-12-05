@@ -8,7 +8,7 @@ body {
     font-weight: 700;
     cursor: default;
     user-select: none;
-    /*transform: scale(1.4);*/
+    transform: scale(1.1);
     overflow: hidden; 
 }
 #baner {

@@ -22,7 +22,11 @@ var czteromasztowce=1;
 var moznaPostawic=false;
 var zablokowanePola=[];
 
+var liczbaStatkowWroga=0;
+var iloscTrafienGracza=0;
 
+var identyfikatorStatkuGracza=0;
+var identyfikatorStatkuKomputera=0;
 
 function wybierz(nr) {
     if(nr===1 && jednomasztowce>0)
@@ -78,10 +82,12 @@ function start() {
                 {
                     niemozliwePola[i].style.backgroundColor="#44515c";
                 }
+                identyfikatorStatkuGracza++;
                 for(i=0; i<podgladStatku.length; i++)
                 {
                     statkiGracza.push(podgladStatku[i]);
                     element(podgladStatku[i]).style.backgroundColor="#00ccff";
+                    element(podgladStatku[i]).setAttribute("nrStatku", identyfikatorStatkuGracza);
                 }
                 podgladStatku=[];
                 niemozliwePola=[];
@@ -180,7 +186,35 @@ async function klik(x) {
             if(x.getAttribute("statekWroga")=="true") {
                 x.innerHTML="X";
                 x.style.backgroundColor="red";
+                iloscTrafienGracza++;
                 kolejGracza=true;
+
+                for(i=1; i<=identyfikatorStatkuKomputera; i++) {
+                    elementyStatku = document.querySelectorAll('[nrStatkuKomputera="'+i+'"]');
+
+                    czyZatopiono=0;
+                    for(j=0; j<elementyStatku.length; j++) {
+                        if(elementyStatku[j].innerHTML=="X") {
+                            czyZatopiono++;
+                            console.log(czyZatopiono);
+                            console.log(elementyStatku.length);
+
+                            if(czyZatopiono==elementyStatku.length)
+                            for(k=0; k<elementyStatku.length; k++)
+                            elementyStatku[k].style.backgroundColor="purple";
+                        }
+                    }
+                    
+                }
+
+
+                if(iloscTrafienGracza>=liczbaStatkowWroga)
+                if(confirm("WYGRAŁEŚ!")) {
+                    window.location.reload();
+                }else {
+                    window.location.reload();
+                }
+
             } else {
                 x.innerHTML="•";
                 kolejGracza=false;
@@ -203,6 +237,24 @@ async function klik(x) {
                         powtorki=true;
                         e.style.backgroundColor="red";
                         trafione++;
+
+                        for(i=1; i<=identyfikatorStatkuGracza; i++) {
+                            elementyStatku = document.querySelectorAll('[nrStatku="'+i+'"]');
+        
+                            czyZatopiono=0;
+                            for(j=0; j<elementyStatku.length; j++) {
+                                if(elementyStatku[j].innerHTML=="X") {
+                                    czyZatopiono++;
+                                    console.log(czyZatopiono);
+                                    console.log(elementyStatku.length);
+
+                                    if(czyZatopiono==elementyStatku.length)
+                                    for(k=0; k<elementyStatku.length; k++)
+                                    elementyStatku[k].style.backgroundColor="purple";
+                                }
+                            }
+                            
+                        }
                     }
                     else
                     powtorki=false;
@@ -244,7 +296,6 @@ function rozpocznij() {
         }
         generujTabelke("polaKomputera","red");
         
-
         genStatekPrzeciwnika(1);
         genStatekPrzeciwnika(1);
         genStatekPrzeciwnika(1);
@@ -261,7 +312,8 @@ function rozpocznij() {
 
 
         function genStatekPrzeciwnika(dlugoscStatku) {
-        
+        identyfikatorStatkuKomputera++;
+
         var rotacjaWroga = Math.random();
         if (rotacjaWroga < 0.5)
             rotacjaWroga = 0
@@ -308,17 +360,29 @@ function rozpocznij() {
         for(i=0; i<niemozliwePolaKomputera.length; i++)
             niemozliwePolaKomputera[i].style.backgroundColor="red";
         
-        if(dlugoscStatku>0)
-        document.querySelector('[x="'+(parseInt(x))+'"][y="'+(parseInt(y))+'"]').style.backgroundColor="purple";
+        if(dlugoscStatku>0) {
+            document.querySelector('[x="'+(parseInt(x))+'"][y="'+(parseInt(y))+'"]').style.backgroundColor="purple";
+            liczbaStatkowWroga++;
+            document.querySelector('[x="'+(parseInt(x))+'"][y="'+(parseInt(y))+'"]').setAttribute("nrStatkuKomputera",identyfikatorStatkuKomputera);
+        }
+        
 
         if(rotacjaWroga===0) {
-            for(i=1; i<dlugoscStatku; i++)
-            document.querySelector('[x="'+(parseInt(x)+i)+'"][y="'+(parseInt(y))+'"]').style.backgroundColor="purple";
+            for(i=1; i<dlugoscStatku; i++) {
+                document.querySelector('[x="'+(parseInt(x)+i)+'"][y="'+(parseInt(y))+'"]').style.backgroundColor="purple";
+                liczbaStatkowWroga++;
+                document.querySelector('[x="'+(parseInt(x)+i)+'"][y="'+(parseInt(y))+'"]').setAttribute("nrStatkuKomputera",identyfikatorStatkuKomputera);
+            }
+            
 
         }
         else if(rotacjaWroga===1) {
-            for(i=1; i<dlugoscStatku; i++)
-            document.querySelector('[x="'+(parseInt(x))+'"][y="'+(parseInt(y)+i)+'"]').style.backgroundColor="purple";
+            for(i=1; i<dlugoscStatku; i++) {
+                document.querySelector('[x="'+(parseInt(x))+'"][y="'+(parseInt(y)+i)+'"]').style.backgroundColor="purple";
+                liczbaStatkowWroga++;
+                document.querySelector('[x="'+(parseInt(x))+'"][y="'+(parseInt(y)+i)+'"]').setAttribute("nrStatkuKomputera",identyfikatorStatkuKomputera);
+            }
+            
         }
         niemozliwePolaKomputera=[];
     }
