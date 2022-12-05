@@ -177,8 +177,16 @@ async function klik(x) {
         flaga=false;
         if(kolejGracza)
         if(x.id.includes("polaKomputera")) {
-            x.innerHTML="•";
-            kolejGracza=false;
+            if(x.getAttribute("statekWroga")=="true") {
+                x.innerHTML="X";
+                x.style.backgroundColor="red";
+                kolejGracza=true;
+            } else {
+                x.innerHTML="•";
+                kolejGracza=false;
+            }
+            
+            
         }
         if(!kolejGracza) {
             let powtorki=true;
@@ -227,7 +235,7 @@ function wyliczZablokowanePola(nX, nY) {
 
 var niemozliwePolaKomputera=[];
 function rozpocznij() {
-    //if(jednomasztowce===0 && dwumasztowce===0 && trzymasztowce===0 && czteromasztowce===0){
+    if(jednomasztowce===0 && dwumasztowce===0 && trzymasztowce===0 && czteromasztowce===0){
         generujTabelke("polaKomputera","red");
         
 
@@ -308,7 +316,17 @@ function rozpocznij() {
         }
         niemozliwePolaKomputera=[];
     }
-    //}
+
+    for(i=1; i<=10; i++)
+    for(j=1; j<=10; j++) {
+        if(document.querySelector('[x="'+i+'"][y="'+j+'"]').style.backgroundColor=="purple")
+        document.querySelector('[x="'+i+'"][y="'+j+'"]').setAttribute("statekWroga", "true");
+
+        document.querySelector('[x="'+i+'"][y="'+j+'"]').style.backgroundColor="";
+
+    }
+
+    }
 
 }
 
