@@ -8,7 +8,6 @@ var trafione=0;
 var kolejGracza=true;
 var flaga=true;
 var statkiGracza=[];
-var zolte=[];
 
 var wybranyStatek=0;
 var podgladStatku=[];
@@ -296,19 +295,22 @@ function rozpocznij() {
         }
         generujTabelke("polaKomputera","red");
         
-        genStatekPrzeciwnika(1);
-        genStatekPrzeciwnika(1);
-        genStatekPrzeciwnika(1);
-        genStatekPrzeciwnika(1);
-
-        genStatekPrzeciwnika(2);
-        genStatekPrzeciwnika(2);
-        genStatekPrzeciwnika(2);
-
-        genStatekPrzeciwnika(3);
-        genStatekPrzeciwnika(3);
-
         genStatekPrzeciwnika(4);
+
+        genStatekPrzeciwnika(3);
+        genStatekPrzeciwnika(3);
+
+        genStatekPrzeciwnika(2);
+        genStatekPrzeciwnika(2);
+        genStatekPrzeciwnika(2);
+
+        genStatekPrzeciwnika(1);
+        genStatekPrzeciwnika(1);
+        genStatekPrzeciwnika(1);
+        genStatekPrzeciwnika(1);
+
+
+
 
 
         function genStatekPrzeciwnika(dlugoscStatku) {
