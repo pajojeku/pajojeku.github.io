@@ -1,5 +1,0 @@
-porob statki jako obiekty
-wygeneruj siatke
-pozwol rozmiescic statki graczowi
-zrob pusta siatke zeby w bota szczelac
-zrob ciulowe ai botowi zeby oddawal
