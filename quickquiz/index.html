@@ -54,7 +54,7 @@
 
     <div class="quiz-container">
         <h1>Szybki Quiz Pajka</h1>
-        <input type="file" id="fileInput" style="display:none" accept=".txt">
+        <input type="file" id="fileInput" accept=".txt" onchange="loadFile(event)">
         <div id="quiz"></div>
         <button class="button" onclick="nextQuestion()">Następne pytanie</button>
         <div id="result"></div>
@@ -62,38 +62,20 @@
 
     <script>
         let quizData = [];
-        let usedQuestions = []; // Tablica do przechowywania użytych pytań
+        let usedQuestions = [];
 
-        // Ładowanie pliku domyślnego (questions.txt), jeśli nie zostanie wybrany inny plik
-        window.onload = function() {
-            loadDefaultFile();
-        };
-
-        // Wczytanie pliku domyślnego (questions.txt)
-        function loadDefaultFile() {
-            fetch('/questions.txt')
-                .then(response => response.text())
-                .then(fileContent => {
+        function loadFile(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const fileContent = e.target.result;
                     quizData = parseQuizData(fileContent);
-                    log("Udalo sie");
-                    nextQuestion();  // Po wczytaniu pliku, zaczynamy quiz
-                })
-                .catch(error => alert('Błąd podczas ładowania domyślnego pliku: ' + error));
+                    nextQuestion();
+                };
+                reader.readAsText(file);
+            }
         }
-
-        // // Wczytanie pliku przez użytkownika
-        // function loadFile(event) {
-        //     const file = event.target.files[0];
-        //     if (file) {
-        //         const reader = new FileReader();
-        //         reader.onload = function(e) {
-        //             const fileContent = e.target.result;
-        //             quizData = parseQuizData(fileContent);
-        //             nextQuestion();  // Po wczytaniu pliku, zaczynamy quiz
-        //         };
-        //         reader.readAsText(file);
-        //     }
-        // }
 
         function parseQuizData(fileContent) {
             const lines = fileContent.split("\n");
@@ -104,31 +86,28 @@
                 line = line.trim();
                 if (!line) return;
 
-                if (/^\d+\./.test(line)) {  // Dowolna liczba na początku pytania
+                if (/^\d+\./.test(line)) {
                     if (currentQuestion) {
                         quizData.push(currentQuestion);
                     }
                     currentQuestion = { question: line, answers: [], correctAnswer: "" };
                 } else if (line.startsWith("-")) {
-                    // Odpowiedź prawidłowa
                     currentQuestion.correctAnswer = line.charAt(1).toLowerCase();
                 } else {
-                    // Odpowiedź
                     currentQuestion.answers.push(line);
                 }
             });
 
             if (currentQuestion) {
-                quizData.push(currentQuestion); // dodaj ostatnie pytanie
+                quizData.push(currentQuestion);
             }
 
             return quizData;
         }
 
-        // Funkcja do wyświetlania pytania
         function displayQuestion(question) {
             const quizContainer = document.getElementById("quiz");
-            quizContainer.innerHTML = ""; // czyszczenie zawartości kontenera
+            quizContainer.innerHTML = "";
 
             const questionElem = document.createElement("div");
             questionElem.classList.add("quiz-container");
@@ -151,7 +130,6 @@
             quizContainer.appendChild(questionElem);
         }
 
-        // Funkcja do sprawdzania odpowiedzi
         function checkAnswer(selectedAnswer, correctAnswer) {
             const resultContainer = document.getElementById("result");
             if (selectedAnswer === correctAnswer) {
@@ -162,7 +140,6 @@
             disableAnswers();
         }
 
-        // Funkcja do wyłączania możliwości wyboru odpowiedzi po kliknięciu
         function disableAnswers() {
             const answers = document.querySelectorAll("input[name='question']");
             answers.forEach(answer => {
@@ -170,10 +147,9 @@
             });
         }
 
-        // Funkcja do wyboru losowego pytania, które jeszcze nie zostało użyte
         function nextQuestion() {
             const resultContainer = document.getElementById("result");
-            resultContainer.innerHTML = ""; // Czyszczenie wyników z poprzedniego pytania
+            resultContainer.innerHTML = "";
 
             if (quizData.length === 0) {
                 alert("Proszę załadować plik z pytaniami.");
