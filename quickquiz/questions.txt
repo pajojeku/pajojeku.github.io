@@ -1,0 +1,763 @@
+1. Czym jest wzorzec projektowy "Proxy"?
+a. Proxy to wzorzec projektowy, który pozwala na tworzenie obiektów poprzez kopiowanie istniejących instancji.
+b. Proxy to wzorzec projektowy, który dostarcza zastępczy obiekt, kontrolujący dostęp do innego obiektu.
+c. Proxy to wzorzec projektowy, który pozwala na dynamiczne tworzenie nowych klas.
+d. Proxy to wzorzec projektowy, który umożliwia zaplanowanie czasochłonnych operacji na później.
+-b
+
+2. Jak zaimplementować wzorzec "Composite"?
+a. Przechowując w każdym komponencie referencje na poprzedni i następny element struktury, by móc delegować do nich żądania.
+b. Przechowując w każdym kompozycie referencję na nadrzędny komponent, by delegować do niego żądania, w razie potrzeby modyfikując je.
+c. Tworząc wspólny interfejs dla komponentów, implementując Liście i Kompozyty, które realizują ten interfejs.
+d. Tworząc klasę bazową, która implementuje wszystkie metody komponentów, a następnie dziedzicząc po niej.
+-c
+
+3. Jakie są zalety stosowania wzorca "Template Method"?
+a. Ułatwia ponowne wykorzystanie kodu, wymagając nadpisania jedynie fragmentów dużego algorytmu.
+b. Zwiększa elastyczność, umożliwiając wymianę algorytmu w zależności od zmieniającego się stanu obiektu.
+c. Zmniejsza zużycie procesora, eliminując konieczność wielokrotnego wywoływania tego samego kodu.
+d. Poprawia modularność, pozwalając na dynamiczną zmianę algorytmu zależnie od kontekstu.
+-a
+
+4. W jakich sytuacjach warto stosować wzorzec "Command"?
+a. Gdy chcemy by obiekty systemu były w stanie wykonywać operacje na innych obiektach systemu.
+b. Gdy chcemy by rozmaite komponenty systemu był informowane o działaniach jednego z nich.
+c. Gdy chcemy aby komponenty tworzonące podsystem same był w stanie odnaleźć spośród siebie wykonawcę operacji.
+d. Gdy chcemy reprezentować działania przy pomocy obiektów, by móc je przechowywać poza obiektem którego dotyczą.
+-d
+
+5. W jakich sytuacjach warto stosować wzorzec "Flyweight"?
+a. Gdy mamy dużą liczbę obiektów o podobnym zachowaniu, aby zmniejszyć liczbę klas.
+b. Gdy mamy klasę o dużej liczbę metod, aby podzielić ją na mniejsze, bardziej zrozumiałe części.
+c. Gdy mamy duży pamięciowo obiekt, aby podzielić go na łatwiej zarządzalne części.
+d. Gdy mamy dużą liczbę obiektów o podobnym stanie, aby zmniejszyć zużycie pamięci.
+-d
+
+6. Jakie są różnice między wzorcem "Factory Method" a "Abstract Factory"?
+a. Factory Method tworzy jeden typ obiektu, podczas gdy Abstract Factory tworzy rodziny powiązanych obiektów.
+b. Factory Method tworzy obiekty przy pomocy konstruktora, a Abstract Factory poprzez kopiowanie istniejących obiektów.
+c. Asbtract Factory tworzy jedynie proste obiekty, podczas gdy Factory Method pozwala na tworzenie złożonych struktur.
+d. Abstract Factory tworzy obiekt na podstawie parametrów wejściowych, a Factory Method na podstawie ustalonej konfiguracji.
+-a
+
+7. Jak działa wzorzec "Flyweight"?
+a. Flyweight tworzy obiekty zawsze wtedy, gdy są one faktycznie potrzebne, aby zminimalizować złożoność czasową.
+b. Flyweight tworzy obiekty tylko wtedy, gdy są one faktycznie potrzebne, aby zminimalizować zużycie pamięci.
+c. Flyweight dzieli stan wewnętrzny obiektu na mniejsze części, które są tworzone i zarządzane niezależnie.
+d. Flyweight rozdziela stan obiektu na zewnętrzny i wewnętrzny, umożliwiając współdzielenie obiektów o tym samym stanie.
+-d
+
+8. Jakie są wady stosowania wzorca "Adapter"?
+a. Jego implementacja wymaga użycia metaklas, co może być trudne w niektórych językach programowania.
+b. Nie posiada żadnych wad.
+c. Może zwiększać złożoność kodu poprzez dodanie dodatkowej warstwy pośredniczącej.
+d. Nie mamy pewności, czy nasze żądania znajdą odpowiedniego odbiorcę.
+-c
+
+9. Jak działa wzorzec "Template Method"?
+a. Metoda szablonowa definiuje algorytm, wywołując metody abstrakcyjne lub wirtualne implementowane w klasach pochodnych.
+b. Metoda szablonowa definiuje zależności pomiędzy komponentami systemu realizującymi poszczególne kroki algorytmu.
+c. Metoda szablonowa definiuje strukturę algorytm, składając go z obiektów reprezentujących poszczególne kroki.
+d. Metoda szablonowa definiuje pojedynczy krok algorytmu, pozostałą część zadania delegując do swego następnika.
+-a
+
+10. Czym jest wzorzec projektowy "Flyweight"?
+a. Flyweight to wzorzec projektowy, który minimalizuje złożoność czasową poprzez wczesną inicjalizację odpowiedniej liczby obiektów.
+b. Flyweight to wzorzec projektowy, który minimalizuje zużycie pamięci poprzez umożliwienie współdzielenia obiektów.
+c. Flyweight to wzorzec projektowy, który minimalizuje zużycie pamięci poprzez umożliwienie ponownego wykorzystania zwolnionych obiektów.
+d. Flyweight to wzorzec projektowy, który minimalizuje złożoność czasową poprzez leniwą inicjalizację obiektów.
+-b
+
+11. Jak działa wzorzec "Chain of Responsibility"?
+a. Żądanie jest przekazywane wzdłuż łańcucha obiektów, a każdy obiekt je obsługuje i przekazuje dalej.
+b. Łańcuch żądań jest przekazywany do obiektu, który decyduje, które z nich obsłużyć, a które odrzucić.
+c. Żądania są sekwencyjnie przekazywane od obiektu, a te nieobsłużone trafiają na kolejkę, by być obsłużone później.
+d. Żądanie jest przekazywane wzdłuż łańcucha obiektów, a każdy obiekt decyduje, czy je obsłużyć, czy przekazać dalej.
+-d
+
+12. W jakich sytuacjach warto używać wzorca "Proxy"?
+a. Gdy obiekt docelowy ma interfejs niekompatybilny z resztą aplikacji.
+b. Gdy chcemy delegować zadania do elementów systemu, ale nie wiemy których.
+c. Gdy obiekt docelowy jest kosztowny w tworzeniu lub wymaga kontroli dostępu.
+d. Gdy chcemy dynamicznie zmieniać zachowanie obiektu docelowego.
+-c
+
+13. Jak zaimplementować wzorzec "Chain of Responsibility"?
+a. Każdy odbiorca powinien posiadać referencję do następnego odbiorcy, do którego przekaże żądanie, jeśli nie jest w stanie go obsłużyć.
+b. Każdy odbiorca powinien posiadać referencję do obiektu, który przekazał mu żądanie, aby móc mu je odesłać, jeśli nie jest w stanie go obsłużyć.
+c. Każdy odbiorca powinien posiadać listę referencji do komponentów, które zajmą się faktyczną obsługą żądania, a on zagreguje ich wyniki.
+d. Każdy odbiorca powinien posiadać referencję do obiektu nadzorującego, by móc przekazać mu informację czy żądanie zostało obsłużone, czy nie.
+-a
+
+14. Jak wygląda relacja między Director a Builder w tym wzorcu?
+a. Builder konstruuje obiekt, oddelegowując do Directora decyzje dotyczące sposobu jego reprezentacji.
+b. Builder konstruuje obiekt, oddelegowując do Directora decyzje dotyczące jego struktury.
+c. Builder odpowiada za stworzenie obiektu, a Director za dodanie mu funkcjonalności.
+d. Director zarządza procesem konstrukcji, wykorzystując Builder do stworzenia obiektu.
+-d
+
+15. Czym jest wzorzec projektowy "Facade"?
+a. Facade to wzorzec projektowy, który dostarcza uproszczony interfejs do bardziej złożonego systemu lub zestawu klas.
+b. Facade to wzorzec projektowy, który umożliwia zaplanowanie czasochłonnych operacji na później.
+c. Facade to wzorzec projektowy, który ujednolica interfejs dostępu do prostych i złożonych obiektów.
+d. Facade to wzorzec projektowy, który pozwala na tworzenie obiektów poprzez kopiowanie istniejących instancji.
+-a
+
+16. Jak wzorzec "Prototype" wspiera zasadę SOLID "Open/Closed Principle"?
+a. Pozwala na rozszerzanie obiektów o nowe funkcjonalności bez konieczności zmiany ich implementacji.
+b. Pozwala na rozszerzanie aplikacji o nowe typy obiektów bez modyfikacji istniejącego kodu.
+c. Pozwala na tworzenie obiektów otwartych na żądania, ale zamkniętych na modyfikowanie stanu.
+d. Pozwala na tworzenie obiektów, które mogą być w przyszłości zastąpione innymi obiektami.
+-b
+
+17. Jak zaimplementować wzorzec "Flyweight"?
+a. Identyfikując części wspólne obiektów i pozostawiając w nich, a różnice przenosząc do zewnętrznej struktury.
+b. Identyfikując części wspólne obiektów i przenosząc je do zewnętrznej struktury, a różne pozostawiając w obiektach.
+c. Tworząc klasę bazową, która implementuje wspólne metody, a następnie dziedzicząc po niej.
+d. Tworząc klasę, która implementuje wspólne metody, a następnie delegując do niej operacje z pojeynczych obiektów.
+-a
+
+18. Jak zaimplementować wzorzec "Command"?
+a. Dodając poza swoją klasą stos przechowujący stan obiektu po wykonaniu każdego polecenia.
+b. Deklarując interfejs z metodami reprezentującymi różne polecenia oraz konkretną klasę implementującą ten interfejs.
+c. Deklarując interfejs z pojedynczą metodą uruchamiającą oraz klasy implementujące ten interfejs, reprezentujące konkretne polecenia.
+d. Deklarując interfejs z metodami Undo i Redo, a następnie implementując go w swojej klasie.
+-c
+
+19. W jakich sytuacjach warto stosować wzorzec "Facade"?
+a. Gdy chcemy zastąpić istniejące obiekty nowymi, ale zachowując ich funkcjonalności.
+b. Gdy chcemy zastąpić wiele klas o podobnym zachowaniu jedną, bardziej konfigurowalną klasą.
+c. Gdy chcemy uprościć złożony system i zapewnić jednolity punkt dostępu do niego.
+d. Gdy chcemy uniknąć tworzenia wielu klas pochodnych, które różnią się tylko implementacją.
+-c
+
+20. Czym jest wzorzec projektowy "Memento"?
+a. Memento to wzorzec projektowy pozwalający na zatrzymywanie i wznawanie wykonywania operacji na obiekcie w zależności od dostępności zasobów.
+b. Memento to wzorzec projektowy pozwalający obiektowi na powiadamianie innych obiektów o zmianie swojego stanu wewnętrznego.
+c. Memento to wzorzec projektowy pozwalający na ustalanie harmonogramu wykonywania operacji na obiekcie w zależności od jego stanu wewnętrznego.
+d. Memento to wzorzec projektowy pozwalający na zapisywanie i przywracanie poprzednich stanów obiektu bez naruszania jego enkapsulacji.
+-d
+
+21. Jak wzorzec "Memento" wspiera zasadę SOLID "Single Responsibility Principle"?
+a. Oddziela odpowiedzialność za zachowanie stanu od jego przywracania.
+b. Oddziela odpowiedzialność za przechowywanie stanu od logiki biznesowej.
+c. Oddziela odpowiedzialność za realizację operacji od modyfikacji stanu.
+d. Oddziela odpowiedzialność za obsługę żądania od jego wykonania.
+-b
+
+22. Czym jest wzorzec projektowy "Factory Method"?
+a. Factory Method to wzorzec, który definiuje metodę do tworzenia obiektów, pozwalając podklasom decydować o ich typie.
+b. Factory Method to wzorzec, który definiuje szkielet algorytmu, pozwalając podklasom na zmianę poszczególnych kroków.
+c. Factory Method to wzorzec, który dostarcza interfejs do tworzenia złożonych obiektów krok po kroku.
+d. Factory Method to wzorzec, który dostarcza zastępnik, który może być używany zamiast oryginalnego obiektu.
+-a
+
+23. Jak zaimplementować wzorzec "State"?
+a. Tworząc klasę stanu, interfejs kontekstu i klasy reprezentujące różne konteksty.
+b. Tworząc klasę stanu, której interfejs zawiera metody reprezentujące różne konteksty.
+c. Tworząc klasę kontekstu, interfejs stanu i klasy reprezentujące różne stany.
+d. Tworząc klasę kontekstu, której interfejs zawiera metody reprezentujące różne stany.
+-c
+
+24. Czym jest wzorzec projektowy "Bridge"?
+a. Bridge to wzorzec projektowy, który zapewnia interakcję między komponentami systemu przez obiekt pośredniczący.
+b. Bridge to wzorzec projektowy, który zapewnia bezpośrednią interakcję między komponentami systemu.
+c. Bridge to wzorzec projektowy, który łączy abstrakcję z implementacją w jednej hierarchii klas.
+d. Bridge to wzorzec projektowy, który oddziela abstrakcję od implementacji, pozwalając na ich niezależny rozwój.
+-d
+
+25. W jakich sytuacjach warto stosować wzorzec "Bridge"?
+a. Gdy chcemy konstruować złożone obiekty krok po kroku.
+b. Gdy chcemy uniknąć tworzenia wielu klas pochodnych, które różnią się tylko implementacją.
+c. Gdy chcemy zapobiec tworzeniu nadmiarowych instancji obiektów.
+d. Gdy chcemy wykonać pewne działanie na wszystkich obiektach złożonej struktury.
+-b
+
+26. Czym jest wzorzec projektowy "Abstract Factory"?
+a. Abstract Factory to wzorzec projektowy, który pozwala na tworzenie obiektów poprzez kopiowanie istniejących instancji.
+b. Asbtract Factory to wzorzec projektowy, który umożliwia tworzenie obiektów poprzez podanie algorytmu ich konstrukcji.
+c. Abstract Factory to wzorzec projektowy, który tworzy zastępniki produktów, które mogą być używane do momentu utworzenia właściwych obiektów.
+d. Abstract Factory to wzorzec projektowy, który dostarcza interfejs do tworzenia rodzin powiązanych lub zależnych obiektów bez określania ich konkretnych klas.
+-d
+
+27. Czym jest wzorzec projektowy "Command"?
+a. Command to wzorzec projektowy definiujący żądanie w klasie bazowej, jej implementację pozostawiający klasom pochodnym.
+b. Command to wzorzec projektowy, który zamienia żądania w obiekty, pozwalając na ich parametryzację, przechowywanie i logowanie.
+c. Command to wzorzec projektowy pozwalający na przekazywanie żądań przez sekwencję obiektów, aż któryś z nich obsłuży to żądanie.
+d. Command to wzorzec projektowy, który pozwala na tworzenie obiektów na żądanie, zamiast tworzenia ich na stałe.
+-b
+
+28. Jak działa wzorzec "Memento"?
+a. Klasa, której stan chcemy zachować, odpowiada za stworzenie Memento i przywrócenie stanu na jego podstawie.
+b. Klasa, której stan chcemy zachować, odpowiada za wykonanie swojej kopii, która będzie przechowywana w Memento.
+c. Klasa, której stan chcemy zachować, deleguje zapisywanie i przywracanie stanu do Memento.
+d. Klasa, której stan chcemy zachować, udostępnia metody do zapisywania i przywracania stanu, które są wywoływane przez Memento.
+-a
+
+29. W jakich sytuacjach warto stosować wzorzec "Strategy"?
+a. Gdy chcemy reprezentować algorytmy w postaci drzewiastej struktury, by móc przebudowywać je w czasie działania aplikacji.
+b. Gdy chcemy wyizolować złożone zależności i interakcje między komponentami systemu i zarządzać nimi centralnie.
+c. Gdy wiele algorytmów może być stosowanych zamiennie i wybór algorytmu powinien być możliwy w czasie działania aplikacji.
+d. Gdy ogólny kształt algorytmu jest znany i niezmienny, ale szczegóły implementacji mogą się różnić zależnie od kontekstu.
+-c
+
+30. W jakich sytuacjach warto stosować wzorzec "Chain of Responsibility"?
+a. Gdy chcemy umożliwić modyfikację żądania w locie, zanim zostanie ono obsłużone.
+b. Gdy chcemy umożliwić przesłanie jednego żądania do wielu obiektów jednocześnie.
+c. Gdy chcemy umożliwić wielu obiektom obsługę żądania, ale nie wiemy, który z nich to zrobi.
+d. Gdy chcemy umożliwić obiektowi buforowanie żądań, zanim zostaną one obsłużone.
+-c
+
+31. Jakie są zalety stosowania wzorca "Mediator"?
+a. Poprawia bezpieczeństwo aplikacji poprzez stworzenie hierarchicznej struktury odpowiedzialności.
+b. Zmniejsza liczbę zależności między komponentami, co ułatwia ich testowanie i rozszerzanie.
+c. Poprawia wydajność aplikacji poprzez zmniejszenie liczby komponentów systemu.
+d. Zwiększa zależność między komponentami, co prowadzi do lepszej integracji systemu.
+-b
+
+32. Jakie są typowe zastosowania wzorca "Command"?
+a. Potokowe przetwarzanie danych strumieniowych.
+b. Filtrowanie lub sortowanie sekwencji obiektów.
+c. Buforowanie lub cache'owanie danych.
+d. Kolejkowanie, składowanie i harmonogramowanie zadań.
+-d
+
+33. W jakich sytuacjach warto stosować wzorzec "Adapter"?
+a. Gdy interakcje pomiędzy komponentami są zbyt skomplikowane do zarządzania bez dodatkowej warstwy abstrakcji.
+b. Gdy chcemy poszerzyć funkcjonaność obiektu o nowe metody.
+c. Gdy istnieją klasy z niezgodnymi interfejsami, które muszą współpracować.
+d. Gdy chcemy zmodyfikować funkcjonalość obiektu, zachowując pierwotny interfejs.
+-c
+
+34. W jakich sytuacjach warto stosować wzorzec "Composite"?
+a. Gdy chcemy zastąpić istniejące obiekty nowymi, ale zachowując ich funkcjonalności.
+b. Gdy chcemy reprezentować hierarchie obiektów i umożliwić ich jednolite traktowanie.
+c. Gdy chcemy reprezentować zależność typu jeden-do-wielu między obiektami.
+d. Gdy potrzebujemy sekwencyjnego dostępu do poszczeólnych elementów struktury.
+-b
+
+35. Czym jest wzorzec projektowy "Iterator"?
+a. Iterator to wzorzec projektowy, który pozwala na skierowanie sekwencji żądań do pojedynczego elementu struktury bez ujawniania jej implementacji.
+b. Iterator to wzorzec projektowy, który pozwala na skierowanie pojedynczego żądania do wszystkich elementów kolekcji bez ujawniania jej wewnętrznej struktury.
+c. Iterator to wzorzec projektowy, który umożliwia sekwencyjne przeglądanie elementów kolekcji bez ujawniania jej wewnętrznej reprezentacji.
+d. Iterator to wzorzec projektowy, który umożliwia delegowanie żądań kierowanych do struktury, dopóki nie zostaną one przez któryś z nich zrealizowane.
+-c
+
+36. Jak zaimplementować wzorzec "Abstract Factory"?
+a. Tworząc interfejs fabryki oraz klasy konkretne implementujące ten interfejs dla każdej rodziny produktów.
+b. Łącząc niepowiązane ze sobą hierarchie produktów za pomocą wspólnej klasy bazowej.
+c. Deklarując klasę statyczną, która tworzy obiekty na podstawie parametrów wejściowych.
+d. Definiując interfejs fabryki, który musi zostać zaimplementowany przez każdy rodzaj produktu.
+-a
+
+37. Jakie są różnice między wzorcem "State" a wzorcem "Strategy"?
+a. Wzorzec "State" zmienia zachowanie obiektu w zależności od jego wewnętrznego stanu, a wzorzec "Strategy" pozwala na wybór odbiorcy do realizacji żądania.
+b. Wzorzec "State" zmienia stan obiektu w zależności od kierowanego do niego żądania, a wzorzec "Strategy" pozwala na wybór odbiorcy do realizacji żądania.
+c. Wzorzec "State" zmienia zachowanie obiektu w zależności od jego wewnętrznego stanu, a wzorzec "Strategy" pozwala na wybór algorytmu w czasie działania aplikacji.
+d. Wzorzec "State" zmienia stan obiektu w zależności od kierowanego do niego żądania, a wzorzec "Strategy" pozwala na wybór algorytmu w czasie działania aplikacji.
+-c
+
+38. Czym jest wzorzec projektowy "Builder"?
+a. Builder to wzorzec projektowy, który pozwala na uzupełnianie obiektów o nowe funkcjonalności w trakcie działania programu.
+b. Builder to wzorzec projektowy, który pozwala na tworzenie obiektów poprzez kopiowanie istniejących instancji.
+c. Builder to wzorzec projektowy, który oddziela proces konstrukcji złożonego obiektu od jego reprezentacji.
+d. Builder to wzorzec projektowy, który definiuje szkielet obiektu, pozwalając na rozbudowanie go później.
+-c
+
+39. Czym jest wzorzec projektowy "Chain of Responsibility"?
+a. Chain of Responsibility to wzorzec projektowy pozwalający na przekazanie żądania do sekwencji obiektów, aż każdy z nich je obsłuży.
+b. Chain of Responsibility to wzorzec projektowy pozwalający na przekazanie sekwencji żądań do obiektu, aż każde z nich zostanie obsłużone.
+c. Chain of Responsibility to wzorzec projektowy pozwalający na przekazanie żądania przez sekwencję obiektów, aż któryś z nich je obsłuży.
+d. Chain of Responsibility to wzorzec projektowy pozwalający na ponawianiu żądania przekazanego do obiektu, aż zostanie ono poprawnie obsłużone.
+-c
+
+40. Czym jest wzorzec projektowy "State"?
+a. State to wzorzec projektowy pozwalający na współdzielenie obiektów o identycznym stanie wewenętrznym.
+b. State to wzorzec projektowy umożliwiający obiektowi zmianę zachowania w zależności od jego wewnętrznego stanu.
+c. State to wzorzec projektowy, który umożliwia automatyczne powiadamianie obiektów o zmianie stanu innego obiektu.
+d. State to wzorzec projektowy pozwalający na zapisywanie i przywracanie poprzednich stanów obiektu.
+-b
+
+41. Czym jest wzorzec projektowy "Singleton"?
+a. Singleton to wzorzec, który umożliwia komunikację między obiektami, poprzez centralizację interakcji.
+b. Singleton to wzorzec, który pozwala na dodawanie nowych operacji do już istniejących obiektów.
+c. Singleton to wzorzec, który zapewnia, że dana klasa ma tylko jedną instancję w całej aplikacji.
+d. Singleton to wzorzec, który dostarcza uproszczony interfejs do złożonego systemu.
+-c
+
+42. Jak zaimplementować wzorzec "Factory Method"?
+a. Deklarując klasę bazową, która tworzy obiekty na podstawie parametrów wejściowych.
+b. Definiując w klasie produktu metodę, która zwraca jego głęboką kopię.
+c. Definiując w klasie bazowej metodę, która zwraca obiekt, a jej implementację dostarczają klasy pochodne.
+d. Deklarując interfejs fabryki, który musi być zaimplementowany przez wszystkie klasy fabryk.
+-c
+
+43. Jakie są zalety stosowania wzorca "Visitor"?
+a. Umożliwia łatwe dodawanie nowych elementów struktury bez zmiany istniejących Visitorów.
+b. Umożliwia łatwe dodawanie nowych operacji bez zmiany istniejącego kodu.
+c. Poprawia wydajność, eliminując konieczność wielokrotnego wywoływania tej samej metody.
+d. Zmniejsza liczbę klas w systemie, eliminując konieczność dziedziczenia.
+-b
+
+44. Jak działa wzorzec "Adapter"?
+a. Adapter zastępuje obiekt docelowy w prostszych operacjach, ale przekazuje bardziej złożone do niego.
+b. Adapter tłumaczy żądania klienta na operacje zgodne z interfejsem obiektu docelowego.
+c. Adapter odbiera żądania od klienta, ale sam decyduje kiedy przekazać je do obiektu docelowego.
+d. Adapter decyduje do któego z obiektów docelowych przekazać żądanie klienta.
+-b
+
+45. W jakich sytuacjach warto stosować wzorzec "Builder"?
+a. Gdy wymagane jest ograniczenie liczby instancji danej klasy w aplikacji.
+b. Gdy musimy stworzyć wiele podobnych do siebie obiektów, ale z różnymi parametrami.
+c. Gdy konieczne jest tworzenie złożonych obiektów, których proces konstrukcji wymaga wielu etapów lub kroków.
+d. Gdy chcemy zastąpić istniejące obiekty nowymi, ale zachowując ich funkcjonalności.
+-c
+
+46. Czym jest wzorzec projektowy "Adapter"?
+a. Adapter to wzorzec projektowy, który zapewnia uproszczony interfejs dostępu do złożonego podsystemu.
+b. Adapter to wzorzec projektowy, który zmienia zachowanie obiektu w zależności od jego stanu wewnętrznego.
+c. Adapter to wzorzec projektowy, który umożliwia łączenie wielu obiektów w jedną, bardziej złożoną strukturę.
+d. Adapter to wzorzec projektowy, który pozwala na współpracę klas o niezgodnych interfejsach poprzez stworzenie klasy pośredniczącej.
+-d
+
+47. Jakie metody powinien oferować Iterator?
+a. Metodę dodania nowego elementu do kolekcji i usunięcia istniejącego.
+b. Metodę sprawdzenia czy kolekcja jest pusta i pobrania pierwszego elementu.
+c. Metodę pobrania następnego elementu i sprawdzenia czy kolejny element istnieje.
+d. Metodę sprawdzenia liczby elementów i pobrania elementu o podanym indeksie.
+-c
+
+48. W jakich sytuacjach warto stosować wzorzec "Memento"?
+a. Gdy potrzebujemy otrzymać powiadomienie o zmianie stanu obiektu.
+b. Gdy potrzebujemy odłożyć wykonanie operacji na obiekcie na później.
+c. Gdy potrzebujemy cofnąć obiekt do poprzedniego stanu lub zapamiętać jego historię.
+d. Gdy potrzebujemy delegować obsługę żądania do innego obiektu.
+-c
+
+49. Jakie są wady stosowania wzorca "Chain of Responsibility"?
+a. Istnieje ryzyko, że żądanie nie zostanie obsłużone przez żadnego z odbiorców.
+b. Istnieje ryzyko, że odbiorca otrzyma jednocześnie kilka żądań i nie będzie wiedział w jakiej kolejności je obsłużyć.
+c. Istnieje ryzyko, że kilku odbiorców będzie przekazywać sobie żądanie w nieskończoność.
+d. Istnieje ryzyko, że kilku odbiorców obsługujących to samo żądanie zacznie jednocześnie modyfikować wspólne dane.
+-a
+
+50. Czym jest wzorzec projektowy "Decorator"?
+a. Wzorzec "Decorator" pozwala na statyczne dodawanie nowych funkcji do obiektów poprzez dziedziczenie.
+b. Wzorzec "Decorator" pozwala na dynamiczne dodawanie nowych funkcji do obiektów bez zmiany ich kodu źródłowego.
+c. Wzorzec "Decorator" pozwala na tworzenie nowych obiektów na podstawie istniejących, ale z innymi parametrami.
+d. Wzorzec "Decorator" pozwala na tworzenie nowych obiektów poprzez kopiowanie istniejących obiektów.
+-b
+
+51. Jakie są kluczowe cechy wzorca "Singleton"?
+a. Zapewnienie jednego interfejsu dla wielu niepowiązanych ze sobą klas.
+b. Zapewnienie, że metody klasy będą wykonywane w określonej kolejności.
+c. Zablokowanie możliwości zmiany stanu obiektu po jego utworzeniu.
+d. Zapewnienie istnienia jednej instancji klasy oraz globalny dostęp do niej.
+-d
+
+52. Jak wzorzec "Decorator" działa w porównaniu z wzorcem "Proxy"?
+a. Dekorator dodaje funkcjonalność, a Proxy kontroluje dostęp do obiektu.
+b. Dekorator znajduje się na zwenątrz, a Proxy wewnątrz obiektu.
+c. Dekorator zachowuje, a Proxy zmienia interfejs obiektu.
+d. Dekoratory można łączyć dzieki dziedziczeniu, a Proxy dzięki kompozycji.
+-a
+
+53. W jakich sytuacjach warto stosować wzorzec "Singleton"?
+a. Gdy potrzebna jest globalna kontrola dostępu do zasobu.
+b. Gdy aplikacja wymaga tylko jednej klasy bazowej.
+c. Gdy potrzebny jest interfejs do złożonego systemu, który ukrywa jego implementację.
+d. Gdy potrzebne są obiekty, które można tworzyć dynamicznie w zależności od kontekstu.
+-a
+
+54. W jakich sytuacjach warto stosować wzorzec "Observer"?
+a. Gdy chcemy wykonywać pewne działanie na wszystkich elementach złożonej struktury.
+b. Gdy żądanie kierowane do jednego obiektu powinno być automatycznie przekazywane do innego.
+c. Gdy wiele obiektów ma identyczny stan i chcemy go między nimi współdzielić.
+d. Gdy zmiana stanu jednego obiektu wymaga powiadomienia wielu innych obiektów.
+-d
+
+55. W jakich sytuacjach warto stosować wzorzec "Mediator"?
+a. Gdy chcemy w przeźroczysty sposób modyfikować komunikację między komponentami systemu.
+b. Gdy chcemy wykorzystać komponenty, których interfejsy nie są zgodne z resztą programu.
+c. Gdy liczba zależności między komponentami systemu jest zbyt duża i trudna do zarządzania.
+d. Gdy liczba komponentów staje się zbyt duża, by zarządzać ich komunikacją w jednym miejscu.
+-c
+
+56. Jakie są zalety stosowania wzorca "Flyweight"?
+a. Zmniejsza złożoność systemu przez dodanie warstwy zarządzania stanem aplikacji.
+b. Zmniejsza złożoność czasową poprzez leniwą inicjalizację obiektów.
+c. Zmniejsza zużycie pamięci przez współdzielenie obiektów.
+d. Zmniejsza odpowiedzialność programisty przez automatyzację zwalniania pamięci.
+-c
+
+57. Jakie są wady stosowania wzorca "Observer"?
+a. Może prowadzić do problemów z wydajnością w przypadku dużej liczby obserwatorów lub częstych powiadomień.
+b. Dodawanie i usuwanie obserwatorów w czasie działania programu może być skomplikowane i prowadzić do błędów.
+c. Może być niewystarczające w pewnych systemach z powodu ograniczenia do jednego obiektu obserwowanego.
+d. Trudne jest dodawanie nowych typów obserwatorów i nowych typów obiektów obserwowanych.
+-a
+
+58. Jakie są zalety stosowania wzorca "State"?
+a. Unikamy konieczności cyklicznego sprawdzania stanu obiektu, by wybrać odpowiednią logikę.
+b. Unikamy konieczności przechowywania wielu kopii obiektu o różnych stanach.
+c. Unikamy złożonych instrukcji warunkowych, które wybierałyby logikę w zależności od stanu obiektu.
+d. Unikamy nadmiernie rozbudowanej hierarchii klas, które reprezentowałyby różne stany obiektu.
+-c
+
+59. Jak zaimplementować wzorzec "Proxy"?
+a. Proxy zawiera pojedynczą metodę dajacą dostęp do wszystkich funkcjonalnosci rzeczywistego obiektu na podstawie parametru wejściowego.
+b. Proxy dziedziczy po rzeczywistym obiekcie, w razie potrzeby nadpisując jego metody.
+c. Proxy implementuje ten sam interfejs, co rzeczywisty obiekt, i deleguje do niego operacje.
+d. Proxy zawiera kolekcję rzeczywistych obiektów, które są używane naprzemiennie lub w zależności od kontekstu.
+-c
+
+60. Jak działa wzorzec "Facade"?
+a. Facade dostarcza uproszczony interfejs, który deleguje żądania do odpowiednich komponentów systemu podrzędnego.
+b. Facade reprezentuje żądania w postaci obiektów, które następnie są przekazywane do komponentów systemu.
+c. Facade dziedziczy po wszystkich komponentach systemu, aby ułatwić dostęp do ich funkcjonalności.
+d. Facade definiuje interfejs, który jest implementowany przez wszystkie komponenty systemu.
+-a
+
+61. Jakie są zalety stosowania wzorca "Bridge"?
+a. Umożliwia oddzielenie żądań od ich wykonania.
+b. Umożliwia niezależny rozwój abstrakcji i implementacji.
+c. Redukuje liczbę wzajemnych zależności pomiędzy komponentami systemu.
+d. Ujednolica dostęp do elementów złożonego systemu.
+-b
+
+62. Jakie są zalety stosowania wzorca "Command"?
+a. Zwiększa bezpieczeństwo automatyzując walidację danych wejściowych.
+b. Oddziela obiekt wykonujący operację od obiektu inicjującego operację.
+c. Umożliwia zatrzymanie i wznowienie wykonywania operacji.
+d. Centralizuje logikę obsługi żądań w jednym miejscu.
+-b
+
+63. Jak działa wzorzec "Bridge"?
+a. Deleguje żądania między komponentami systemu przez obiekt pośredniczący.
+b. Definiuje metody, które mogą być używane przez inne klasy.
+c. Oddziela abstrakcję od implementacji, umożliwiając ich niezależne zmiany.
+d. Dostarcza uproszczony interfejs do bardziej złożonego systemu.
+-c
+
+64. Jakie są wady stosowania wzorca "Mediator"?
+a. Może prowadzić do nadmiernego rozrastania się klasy Mediator, która centralizuje całą logikę komunikacji.
+b. Śledzenie stanu wszystkich komponentów przez Mediatora może prowadzić do nadmiernego zużycia pamięci.
+c. Mediator musi mieć dostęp do prywatnych metod komponentów, co narusza zasadę enkapsulacji.
+d. Mediator nie ma kontroli nad tym w jakim czasie ani w jakiej kolejności komponenty będą odbierać jego komunikaty.
+-a
+
+65. Czym jest wzorzec projektowy "Visitor"?
+a. Visitor to wzorzec projektowy pozwalający na zmienianie i przywracanie stanu obiektu bez naruszania jego enkapsulacji.
+b. Visitor to wzorzec projektowy, który pozwala na przekazywanie żądań przez sekwencję obiektów, aż któryś z nich je obsłuży.
+c. Visitor to wzorzec projektowy, który pozwala na automatyczne powiadamianie wielu obiektów o zmianach stanu innego obiektu.
+d. Visitor to wzorzec projektowy umożliwiający dodawanie nowych operacji do istniejących struktur obiektowych bez zmieniania ich kodu.
+-d
+
+66. Jak działa wzorzec "Strategy"?
+a. Obiekt kontekstu deleguje wykonywanie algorytmu do metody realizującej konkretną strategię.
+b. Obiekt kontekstu definiuje ogólny algorytm strategii, którego każdy krok może być zmieniony na podstawie parametrów.
+c. Obiekt kontekstu deleguje wykonywanie algorytmu do obiektu reprezentującego konkretną strategię.
+d. Obiekt kontekstu definiuje sposób realizacji kroków strategii, której szczegółowy algorytm zostanie zdefiniowany w klasie pochodnej.
+-c
+
+67. Jak działa wzorzec "Observer"?
+a. Stan obserwatora i obiektu obserwowanego są powiązane i zmieniają się równocześnie.
+b. Obserwator cyklicznie sprawdza stan obiektu obserwowanego i reaguje na zmiany.
+c. Obiekt obserwowany informuje zarejestrowanych obserwatorów o zmianach swojego stanu.
+d. Obserwator przechwytuje żądania skierowane do obiektu obserwowanego, co daje mu pełną kontrolę nad jego stanem.
+-c
+
+68. W jakich sytuacjach warto stosować wzorzec "Iterator"?
+a. Gdy konieczne jest iterowanie po elementach kolekcji w sposób niezależny od jej implementacji.
+b. Gdy konieczne jest modifikowanie struktury kolekcji bez konieczności przerwania iteracji.
+c. Gdy chcemy zaimplementować iterację w języku, który nie oferuje wbudowanych mechanizmów iteracji.
+d. Gdy chcemy wykonać operację na elementach kolekcji bez ręcznego iterowania po nich.
+-a
+
+69. Jakie są zalety stosowania wzorca "Facade"?
+a. Umożliwia niezależny rozwój abstrakcji i implementacji.
+b. Zapewnia luźne powiązanie między komponentami systemu.
+c. Redukuje zależności między klientem a komponentami systemu.
+d. Pozwala na zachowanie stanu obiektu między kolejnymi żądaniami.
+-c
+
+70. Jakie są potencjalne zagrożenia przy stosowaniu wzorca "Memento"?
+a. Jeśli operacja nie jest odwracalna, przywrócenie stanu może nie być możliwe.
+b. Przechowywanie dużej liczby stanów może prowadzić do wyczerpania zasobów pamięci.
+c. Równoległe przetważanie żądań może prowadzić do konfliktów w dostępie do stanu.
+d. Istnieje ryzyko, że zakolejkowane żądania nie zostaną nigdy obsłużone.
+-b
+
+71. Jakie są potencjalne problemy związane z używaniem wzorca "Prototype"?
+a. Dodanie nowych rodzajów produktów jest trudne i wymaga modyfikacji istniejącego kodu.
+b. Stworzone obiekty mogą być w niektórych sytuacjach niewystarczające do działania aplikacji.
+c. Nie mamy gwarancji poprawnego zainicjalizowania tworzonego obiektów.
+d. Może prowadzić do trudności w klonowaniu złożonych obiektów z odwołaniami do innych obiektów.
+-d
+
+72. W jakich sytuacjach warto stosować wzorzec "Template Method"?
+a. Gdy wiele klas może zrealizować ten sam algorytm i chcemy dynamicznie wybierać implementację.
+b. Gdy wiele klas współpracuje w realizacji tego samego algorytmu i chcemy ukryć te szczeóły przed klientem.
+c. Gdy wiele klas implementuje podobny algorytm, ale z niewielkimi różnicami w szczegółach.
+d. Gdy wiele klas powinno móc jednocześnie wykonywać ten sam algorytm, ale w różnych kontekstach.
+-c
+
+73. W jakich sytuacjach warto stosować wzorzec "Visitor"?
+a. Gdy komponenty systemu powinny być informowane o zmianach w innych komponentach.
+b. Gdy chcemy dodawać nowe operacje do hierarchii klas bez ich modyfikacji.
+c. Gdy żądania kierowane do jednego obiektu powinny być automatycznie przekazywane do innego.
+d. Gdy często modyfikujemy hierarchię klas i chcemy zachować spójność kodu.
+-b
+
+74. Jakie są główne cele stosowania wzorca "Prototype"?
+a. Korzystanie z uproszczonych implementacji obiektów na etapie testowania systemu.
+b. Zmniejszenie kosztów tworzenia obiektów poprzez klonowanie istniejących instancji.
+c. Tworzenie instancji, któych klasę można później zmienić.
+d. Oszczędność pamięci poprzez współdzielenie zasobów między obiektami.
+-b
+
+75. Jak działa wzorzec "Composite"?
+a. Composite organizuje obiekty w strukturę drzewa, umożliwiając traktowanie grup obiektów i pojedynczych elementów w ten sam sposób.
+b. Composite gromadzi wszystkie elementy struktury w jednym miejscu i centralizuje logikę interakcji między nimi.
+c. Composite nie ma własnego stanu ani logiki, opdpowiada jedynie za przekazywanie żądań do innych komponentów systemu.
+d. Composite wykorzystuje kompozycję, aby dodawać nową funkcjonalność do istniejących obiektów.
+-a
+
+76. W jakich sytuacjach warto stosować wzorzec "State"?
+a. Gdy wiele obiektów ma identyczny stan i chcemy go między nimi współdzielić.
+b. Gdy zmiana stanu jednego obiektu powinna powodować automatyczną zmianę stanu innego.
+c. Gdy obiekt może przyjmować jeden z wiele stanów, które wymagają różnych zachowań.
+d. Gdy chcemy zachować aktualny stan obiektu by móc go później przywrócić.
+-c
+
+77. Jak wzorzec "Abstract Factory" wspiera zasadę SOLID "Open/Closed Principle"?
+a. Pozwala na dodawanie nowych rodzin produktów bez zmiany istniejącego kodu.
+b. Pozwala na czasowe zablokowanie możliwości tworzenia nowych obiektów.
+c. Umożliwia tworzenie obiektów, których nie można modyfikować.
+d. Zapobiega tworzeniu nadmiarowych instancji obiektów.
+-a
+
+78. Czym jest wzorzec projektowy "Template Method"?
+a. Template Method to wzorzec projektowy definiujący składniki algorytmu w klasie bazowej, a jego konkretny przebieg w klasach pochodnych.
+b. Template Method to wzorzec projektowy definiujący szkielet algorytmu w klasie bazowej, a szczegóły implementacji w klasach pochodnych.
+c. Template Method to wzorzec projektowy definiujący algorytm, który zmienia się w czasie, w zależności od stanu obiektu.
+d. Template Method to wzorzec projektowy definiujący mockowy wariant algorytmu, który może być używany w testach jednostkowych.
+-b
+
+79. Jak można zaimplementować wzorzec "Singleton"?
+a. Przez wykorzystanie metod prywatnych, które uniemożliwiają tworzenie nowych instancji klasy.
+b. Poprzez zastosowanie abstrakcyjnej klasy bazowej, która kontroluje dostęp do instancji klasy.
+c. Przez zastosowanie statycznej metody, która zwraca instancję klasy, a jeśli nie istnieje, tworzy ją.
+d. Poprzez rzucanie wyjątków w przypadku próby utworzenia więcej niż jednej instancji klasy.
+-c
+
+80. Jak wzorzec "Strategy" wpływa na strukturę kodu?
+a. Zastępuje wywoływanie metod klasy bazowej delegowaniem żądań do klas pochodnych.
+b. Zastępuje złożone instrukcje if-else lub switch dziedziczeniem.
+c. Zastępuje rozbudowaną logikę klas pochodnych delegowaniem żądań do klasy bazowej.
+d. Zastępuje złożoną hierarchię dziedziczenia instrukcjami if-else lub switch.
+-a
+
+81. W jakim celu stosuje się wzorzec "Proxy"?
+a. W celu dynamicznego dodawania bądź usuwania funkcjonalności obiektu w trakcie działania programu.
+b. W celu zmniejszenia liczby instancji obiektu w aplikacji poprzez jego współdzielenie.
+c. W celu zastąpienia oryginalnego obiektu nowym, bardziej wydajnym lub opartym na innej technologii.
+d. W celu kontrolowania dostępu do obiektu, zmniejszenia kosztów jego tworzenia lub zarządzania jego użyciem.
+-d
+
+82. Jakie są wady stosowania wzorca "Bridge"?
+a. Jego implementacja może wymagać zaawansowanej logiki.
+b. Wprowadza dodatkową warstwę abstrakcji, co może zwiększać złożoność kodu.
+c. Nie możemy być pewni, czy nasze żądania znajdą odpowiedniego odbiorcę.
+d. Opiera się na wielodziedziczeniu, co nie w każdym języku jest możliwe.
+-b
+
+83. Czym jest wzorzec projektowy "Composite"?
+a. Composite to wzorzec projektowy, który dostarcza uproszczony interfejs dostępu do złożonego podsystemu.
+b. Composite to wzorzec projektowy, który umożliwia traktowanie pojedynczych obiektów i ich grup w jednakowy sposób.
+c. Composite to wzorzec projektowy, który oddziela proces tworzenia obiektów od ich reprezentacji.
+d. Composite to wzorzec projektowy, który pozwala na centralizację zarządzania obiektami w jednym miejscu.
+-b
+
+84. Co odróżnia "konstruktor dekoratora" od standardowego konstruktora klasy?
+a. Konstruktor dekoratora nie przyjmuje żadnych argumentów.
+b. Konstruktor dekoratora jest zawsze statyczny.
+c. Konstruktor dekoratora przyjmuje obiekt, który implementuje ten sam interfejs.
+d. Konstruktor dekoratora jest zawsze prywatny.
+-c
+
+85. Jakie są wady stosowania wzorca "Template Method"?
+a. Trudno jest przewidzieć w jakiej kolejności zostaną wykonane poszczególne kroki algorytmu.
+b. Zdefiniowany szkielet algorytmu może stanowić ograniczenie dla niektórych klientów.
+c. Częste redefiniowanie algorytmu zwiększa zużycie pamięci i obciążenie procesora.
+d. Algorytm może zmienić się w trakcie wykonywania, co prowadzi do nieprzewidywalnych rezultatów.
+-b
+
+86. Jak działa wzorzec "Iterator"?
+a. Umożliwia przekazanie do kolekcji pojedynczego żądania, które zostanie zrealizowane przez wszystkie elementy.
+b. Zapewnia dostęp do wszystkich elementów kolekcji jednocześnie, bez konieczności ręcznego iterowania po nich.
+c. Zapewnia sekwencyjny dostęp do elementów kolekcji, bez konieczności znajomości jej struktury wewnętrznej.
+d. Umożliwia przekazywanie żądań przez sekwencję obiektów, aż któryś z nich je obsłuży lub odrzuci.
+-c
+
+87. Czym jest wzorzec projektowy "Mediator"?
+a. Mediator to wzorzec projektowy, który łączy obiekty w hierarchiczną strukturę, dyktującą zasady ich komunikacji.
+b. Mediator to wzorzec projektowy, który pozwala na automatyczne informowanie wielu obiektów o zmianach stanu innego obiektu.
+c. Mediator to wzorzec projektowy, który centralizuje interakcję między obiektami w dedykowanym obiekcie pośredniczącym.
+d. Mediator to wzorzec projektowy, który potrafi zmieniać zachowanie obiektów poprzez dodanie warstwy pośredniczącej.
+-c
+
+88. Jak wzorzec "Decorator" różni się od dziedziczenia?
+a. Dekorator pozwala na dodawanie funkcjonalności w czasie działania, podczas gdy dziedziczenie wymaga zmian w czasie kompilacji.
+b. Dekorator pozwala na zmianę funkcjonalności, podczas gdy dziedziczenie pozwala jedynie na zmianę reprezentacji.
+c. Dekorator jest wydajniejszy od dziedziczenia pod względem zużycia pamięci i czasu procesora.
+d. Dekorator pozwala na tworzenie nowych klas, podczas gdy dziedziczenie pozwala na tworzenie nowych obiektów.
+-a
+
+89. Jak działa wzorzec "Mediator"?
+a. Centralizuje logikę komunikacji między komponentami, eliminując bezpośrednie zależności między nimi.
+b. Decentralizuje logikę komunikacji między komponentami, umożliwiając im bezpośrednią interakcję.
+c. Łączy komponenty w łańcuch, w którym każdy komponent może przekazać żądanie jedynie do następnego w łańcuchu.
+d. Łączy komponenty w hierarchię, w której każdy komponent może komunikować się jedynie z poziomami o jeden wyżej lub niżej.
+-a
+
+90. Czym jest wzorzec projektowy "Observer"?
+a. Observer to wzorzec projektowy, który definiuje warstwę pośredniczącą, modyfikującą żądania przesyłane między obiektami.
+b. Observer to wzorzec projektowy, który umożliwia automatyczne powiadamianie wielu obiektów o zmianach stanu innego obiektu.
+c. Observer to wzorzec projektowy, który centralizuje logikę komunikacji między obiektami w dedykowanym obiekcie pośredniczącym.
+d. Observer to wzorzec projektowy, który umożliwia przekazywanie żądania przez sekwencję obiektów, aż jeden z nich je obsłuży.
+-b
+
+91. W jaki sposób dekoratory mogą być łączone?
+a. Wielodziedziczenie pozwala na łączenie kilku dekoratorów w jednej klasie.
+b. Każdy dekorator opakowuje obiekt, który może być kolejnym dekoratorem.
+c. Każdy dekorator może być zaimplementowany jako osobna metoda w jednej klasie.
+d. Obiekt przechowuje listę dekoratorów, które są wywoływane w odpowiedniej kolejności.
+-b
+
+92. Jak zaimplementować wzorzec "Builder"?
+a. Tworząc klasę budowniczego, która definiuje metody konstruujące obiekt krok po kroku.
+b. Towrząc klasę z szeregiem metod budujących, każda tworząca inny wariant obiektu.
+c. Tworząc klasę z pojedynczą metodą budowniczego, która konstruuje obiekt zależnie od parametrów wejściowych.
+d. Tworząc klasę, która potrafi odpytać użytkownika o parametry obiektu i na ich podstawie go skonstruować.
+-a
+
+93. Jakie są wady stosowania wzorca "Facade"?
+a. Może prowadzić do nadmiernego wzrostu liczby klas w systemie.
+b. Może naruszać hermetyzacją, przez ujawnianie zbyt wielu szczegółów implementacji.
+c. Może prowadzić do nadmiernego zużycia pamięci w trakcie działania programu.
+d. Może ukrywać zbyt wiele szczegółów, co utrudnia dostęp do pełnej funkcjonalności systemu.
+-d
+
+94. Jak zaimplementować wzorzec "Prototype"?
+a. Implementując metodę delegującą żądania do klasy określonej na etapie wykonania programu.
+b. Definiując klasę prototypową, która implementuje wymagany interfejs, ale bez rzeczywistej funkcjonalności i danych.
+c. Definiując klasę fabryki prototypów, która tworzy obiekty na podstawie parametrów wejściowych.
+d. Implementując metodę klonującą w klasie bazowej i używając jej w celu stworzenia kopii istniejących obiektów.
+-d
+
+95. Jakie są wady stosowania wzorca "Strategy"?
+a. Trudność dodania nowych strategii.
+b. Trudność wymiany strategii w czasie działania aplikacji.
+c. Zwiększa liczbę instrukcji warunkowych w kodzie.
+d. Zwiększa zależność między kontekstem a strategią.
+-d
+
+96. Jak wzorzec "Builder" różni się od wzorca "Factory Method"?
+a. Builder opiera się na dziedziczeniu, a Factory Method na kompozycji.
+b. Builder jest uproszczoną wersją Factory Method.
+c. Builder koncentruje się na stopniowej konstrukcji złożonych obiektów, podczas gdy Factory Method tworzy obiekty w jednym kroku.
+d. Builder skupia się na tworzeniu obiektów na podstawie parametrów wejściowych, a Factory Method na wyborze rodzaju obiektu.
+-c
+
+97. Jak działa wzorzec "Visitor"?
+a. Visitor definiuje nową operację dla jednego typu obiektu, przyjmuje Element jako parametr i wykonuje na nim tę operację.
+b. Visitor definiuje nową operację dla jednego typu obiektu, a Element przyjmuje obiekt Visitor, który wykonuje na nim operację.
+c. Visitor definiuje nową operację dla każdego typu obiektu, a Element przyjmuje obiekt Visitor, który wykonuje na nim operację.
+d. Visitor definiuje nową operację dla każdego typu obiektu, a Element przyjmuje obiekt Visitor i deleguje do niego operację.
+-c
+
+98. Jak zaimplementować wzorzec "Adapter"?
+a. Przez stworzenie klasy implementującej wszystkie potrzebne interfejsy i delegującej poszczególne żądania do właściwych odbiorców.
+b. Przez udostępnienie pojedynczej metody, która w zależności od parametru będzie delegować żądania do odpowiednich metod obiektu docelowego.
+c. Przez dodanie wymaganych przez docelowy interfejs metod do klasy, której interfejs chcemy dostosować.
+d. Przez stworzenie klasy implementującej docelowy interfejs i delegującej operacje do obiektu, którego interfejs chcemy dostosować.
+-d
+
+99. Jak zaimplementować wzorzec "Iterator"?
+a. Kolekcja powinna udostępniać metodę przyjmującą obiekt Iterator, który będzie odpowiedzialny za wykonanie operacji na elementach kolekcji.
+b. Kolekcja powinna udostępniać metody pozwalające na sprawdzenie liczby elementów i pobranie elementu o podanym indeksie.
+c. Kolekcja powinna udostępniać metody pozwalające na pobranie następnego elementu i sprawdzenie czy kolejny element istnieje.
+d. Kolekcja powinna udostępniać metodę zwracającą obiekt Iterator, który będzie odpowiedzialny za iterację po elementach kolekcji.
+-d
+
+100. Jak zaimplementować wzorzec "Observer"?
+a. Obiekt obserwowany przechowuje listę obserwatorów i informuje je o zmianach stanu.
+b. Obserwator i obiekt obserwowany komunikują się bezpośrednio peer-to-peer.
+c. Obserwator i obiekt obserwowany komunikują się przez warstwę pośredniczącą.
+d. Obserwator przechowuje listę obiektów obserwowanych i cyklicznie sprawdza ich stan.
+-a
+
+101. Jakie problemy może powodować nieprawidłowa implementacja wzorca "Singleton" w aplikacjach wielowątkowych?
+a. Singleton nie działa w aplikacjach wielowątkowych.
+b. Może prowadzić do utworzenia wielu instancji Singletona w różnych wątkach.
+c. Może prowadzić do utworzenia jednej instancji Singletona w różnych wątkach.
+d. Może prowadzić do przedwczesnego zakończenia wątków, które próbują uzyskać dostęp do Singletona.
+-b
+
+102. Jakie są wady stosowania wzorca "Visitor"?
+a. Dodawanie nowych rodzajów elementów jest trudne, gdyż wymaga modyfikacji wszystkich Visitorów.
+b. Visitor realizuje wiele zadań, co narusza zasadę jednej odpowiedzialności.
+c. Modyfikacja pojedynczej operacji wymaga zmiany wszystkic Visitorów co narusza zasadę otwarte/zaamknięte.
+d. Dodawanie nowych operacji jest trudne, gdyż wymaga modyfikacji wszystkich rodzajów elementów.
+-a
+
+103. Jakie są potencjalne problemy związane z używaniem wzorca "Abstract Factory"?
+a. Tworzone przez fabrykę produkty mogą nie być ze sobą kompatybilne.
+b. Tworzone przez fabrykę produkty mogą nie być poprawnie zainicjalizowane.
+c. Dodanie nowej rodziny produktów wymaga modyfikacji wszystkich już istniejących rodzin.
+d. Dodanie nowych rodzajów produktów wymaga modyfikacji wszystkich fabryk.
+-d
+
+104. Jakie są wady stosowania wzorca "Composite"?
+a. Composite nie pozwala na użycie różnych typów liści w jednej strukturze.
+b. Composite nie daje narzędzi do ograniczenia typu lub liczby obiektów tworzących strukturę.
+c. Composite nie pozwala na użycie różnych typów kompozytów w jednej strukturze.
+d. Composite wymaga określenia z góry maksymalnej głebokości drzewa.
+-b
+
+105. Czym jest wzorzec projektowy "Strategy"?
+a. Strategy to wzorzec projektowy defeiniujący reguły wyboru właściwych odbiorców żądań oraz sposobu ich realizacji.
+b. Strategy to wzorzec projektowy pozwalający na definiowanie rodzin algorytmów, które można wymieniać w czasie działania aplikacji.
+c. Strategy to wzorzec projektowy definiujący szkielet algorytmu, którego szczegóły implementacji można modyfikować w klasach pochodnych.
+d. Strategy to wzorzec projektowy pozwalający na definiowanie nowych algorytmów z operacji podstawowych w czasie działania aplikacji.
+-b
+
+106. Jakie są różnice między Proxy a Adapterem?
+a. Za Proxy może kryć się wiele współpracujących obiektów, podczas gdy Adapter korzysta tylko z jednego.
+b. Adapter może zmienić działanie obiektu, podczas gdy Proxy w ogóle nie wpływa na funkcjonalność.
+c. Proxy zawsze dziedziczy po rzeczywistym obiekcie, podczas gdy Adapter zastępuje go.
+d. Proxy kontroluje dostęp do obiektu, podczas gdy Adapter zmienia interfejs obiektu w celu jego dopasowania do innego.
+-d
+
+107. Jakie są główne cele stosowania wzorca "Factory Method"?
+a. Zagwarantowanie unikalności tworzonych obiektów poprzez kontrolę procesu ich tworzenia.
+b. Zapewnienie elastyczności w tworzeniu obiektów bez bezpośredniego odwoływania się do ich klas.
+c. Przyśpieszenie procesu tworzenia obiektów poprzez zastąpienie konstruktorów metodami fabrycznymi.
+d. Odroczenie czasu tworzenia obiektów do momentu, gdy są one faktycznie potrzebne.
+-b
+
+108. Jakie są główne cele stosowania wzorca "Abstract Factory"?
+a. Zapewnienie, że obiekty tworzone przez fabryki będą prawidłowo zainicjalizowane.
+b. Zapewnienie optymalnego zarządzania zasobami w aplikacji.
+c. Zapewnienie, że obiekty tworzone przez fabryki będą poprawnie usuwane.
+d. Zapewnienie zgodności między obiektami tworzonymi przez różne fabryki.
+-d
+
+109. Czym jest wzorzec projektowy "Prototype"?
+a. Prototype to wzorzec projektowy, który umożliwia tworzenie zastępników obiektów, gdy ich klasy nie są jeszcze określone.
+b. Prototype to wzorzec projektowy pozwalający na wybór strategii działania obiektu w zależności od kontekstu.
+c. Prototype to wzorzec projektowy definiujący szkielet algorytmu, pozwalający na zmianę poszczególnych kroków.
+d. Prototype to wzorzec projektowy, który umożliwia klonowanie obiektów, zamiast tworzenia ich od podstaw.
+-d
+
