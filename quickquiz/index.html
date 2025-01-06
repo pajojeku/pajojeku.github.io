@@ -13,20 +13,24 @@
             height: 100vh;
             margin: 0;
             background-color: #f4f4f4;
+            font-size: 20px;;
         }
         .quiz-container {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 450px;
+            background-color: #f4f4f4;
+            width: 500px;
+            padding: 20px;;
             text-align: center;
+            margin: 0px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 10px;
         }
         .question {
             font-weight: bold;
             margin-bottom: 20px;
         }
         .answer {
-            margin: 10px 0;
+            padding: 10px;
         }
         .answer label {
             cursor: pointer;
@@ -45,6 +49,7 @@
             cursor: not-allowed;
         }
         .result {
+            font-style: oblique;
             margin-top: 20px;
             font-weight: bold;
         }
@@ -56,8 +61,9 @@
         <h1>Szybki Quiz</h1>
         <input type="file" id="fileInput" accept=".txt" onchange="loadFile(event)">
         <div id="quiz"></div>
-        <button class="button" onclick="nextQuestion()">Następne pytanie</button>
         <div id="result"></div>
+        <button class="button" onclick="nextQuestion()">Następne pytanie</button>
+
     </div>
 
     <script>
