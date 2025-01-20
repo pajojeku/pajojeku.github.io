@@ -761,3 +761,688 @@ c. Prototype to wzorzec projektowy definiujący szkielet algorytmu, pozwalający
 d. Prototype to wzorzec projektowy, który umożliwia klonowanie obiektów, zamiast tworzenia ich od podstaw.
 -d
 
+Iteratory jakiej kategorii zapewniają adaptery w STL C++ ?
+Wybierz jedną odpowiedź:
+-a. nie zapewniają żadnych iteratorów
+b. dwukierunkowe (bidirectional)
+c. takie, jak kontener, który adaptują
+d. o dostępie bezpośrednim (random access)
+
+Iteratory jakiej kategorii zapewniają kolejki o dwóch końcach (deque) w STL C++ ?
+Wybierz jedną odpowiedź:
+a. jednokierunkowe (forward)
+-b. o dostępie bezpośrednim (random access)
+c. dwukierunkowe (bidirectional)
+d. wejściowe (input)
+
+Iteratory jakiej kategorii zapewniają wektory w STL C++ ?
+Wybierz jedną odpowiedź:
+a. dwukierunkowe (bidirectional)
+-b. o dostępie bezpośrednim (random access)
+c. jednokierunkowe (forward)
+d. wejściowe (input)
+
+Iteratory jakiej kategorii zapewniają listy w STL C++ ?
+Wybierz jedną odpowiedź:
+a. o dostępie bezpośrednim (random access)
+b. jednokierunkowe (forward)
+c. wyjściowe (output)
+-d. dwukierunkowe (bidirectional)
+
+Iteratory jakiej kategorii zapewniają mapy w STL C++ ?
+Wybierz jedną odpowiedź:
+a. jednokierunkowe (forward)
+b. wyjściowe (output)
+-c. dwukierunkowe (bidirectional)
+d. o dostępie bezpośrednim (random access)
+
+Jaka jest rola alokatorów w STL C++ ?
+Wybierz jedną odpowiedź:
+a. pozwalają dynamicznie alokować pamięć dla algorytmów, przez co można zwiększać i zmniejszać ich rozmiar kontenerów, na których operują
+-b. pośredniczą w pracy kontenerów z pamięcią
+c. jedynie za ich pośrednictwem klient może rezerwować pamięć dla kontenerów
+d. zapewniają mechanizm odśmiecania pamięci (garbage collection), którego brak jest w "czystym" C++
+
+Co to jest predykat (w STL C++) ?
+Wybierz jedną odpowiedź:
+a. obiekt funkcyjny, który nie pobiera parametrów
+b. kontener, który przechowuje wartości logiczne (true i false)
+-c. obiekt funkcyjny, który zwraca jako wynik wartość logiczną
+d. obiekt funkcyjny, który pobiera jako parametry wartości logiczne
+
+W jaki sposób algorytmy STL C++ dodają nowe elementy do kontenerów ?
+Wybierz jedną odpowiedź:
+a. operując na niskopoziomowych wskaźnikach do kontenerów
+b. zapisując kontener do pliku, a po dodaniu elementów do pliku – wczytując kontener z tego pliku
+c. przekształcają kontener na tablicę, a po dodaniu elementów do pliku – na odwrót
+-d. poprzez przekazanie do nich iteratorów – wstawiaczy
+
+Jakie kontenery STL C++ wspierają indeksowanie (operator [ ]) ?
+Wybierz jedną odpowiedź:
+a. listy, wektory i mapy
+-b. kolejki o dwóch końcach, mapy i wektory
+c. kolejki o dwóch końcach, listy i wektory
+d. mapy, wektory i listy
+
+Jaka jest rola kontenerów w bibliotece C++ STL ?
+Wybierz jedną odpowiedź:
+-a. przechowują zmienne różnych typów
+b. przechowują obiekty śmiecie i zapewniają mechanizm odśmiecania (garbage collection), którego brak jest w "czystym" C++
+c. przechowują wszystkie obiekty stworzone w programie i udostępniają je metodom programu
+d. przechowują wskaźniki na metody, które pozwalają skorzystać z metod wirtualnych, których normalnie nie obsługuje STL
+
+Jaka jest rola obiektów funkcyjnych w STL C++ ?
+Wybierz jedną odpowiedź:
+a. zmieniają metodę wirtualną w niewirtualną
+-b. zmieniają działanie algorytmów i kontenerów
+c. zmieniają metodę niewirtualna w wirtualną
+d. pozwalają na wywołanie prywatnych i chronionych funkcji
+
+Jakiego mechanizmu języka C++ używa biblioteka STL C++ aby zapewnić generyczność (obsługę dowolnych typów danych) algorytmów i kontenerów ?
+Wybierz jedną odpowiedź:
+a. klas abstrakcyjnych i metod wirtualnych
+b. biblioteka nie zapewnia generycznych algorytmów i kontenerów
+-c. szablonów
+d. kompozycji i delegacji
+
+Co to jest zbiór (set) STL C++ ?
+Wybierz jedną odpowiedź:
+-a. kolekcja posortowanych wartości
+b. inna nazwa wektora
+c. kolekcja par (klucz+wartość)
+d. inna nazwa listy
+
+Na czym polega wiązanie argumentów obiektów funkcyjnych w STL C++ ?
+Wybierz jedną odpowiedź:
+a. na ustaleniu ich wartości
+b. na zamianie wartości funktorów 2-argumentowych
+-c. na ustaleniu wartości jednego argumentu, przez co funktor 2-argumentowy zmienia się funktor 1-argumentowy
+d. na opakowaniu argumentów typów prostych w kopertowe typy obiektowe
+
+Jaka jest złożoność dostępu do dowolnego elementu (random access) w mapach (wg klucza) i zbiorach STL C++ ?
+Wybierz jedną odpowiedź:
+-a. logarytmiczna
+b. kwadratowa
+c. stała
+d. liniowa
+
+W jaki sposób algorytmy STL C++ „zmieniają” strukturę kontenerów, na których operują ?
+Wybierz jedną odpowiedź:
+a. przekształcają kontener na tablicę, a po modyfikacji struktury – na odwrót
+b. zapisując je do pliku, modyfikując plik, a potem wczytując kontener z tego pliku
+c. operując na niskopoziomowych wskaźnikach do kontenerów
+-d. pobierając dodatkowy parametr – iterator i zapisując zmodyfikowaną wersję kontenera do niego
+
+Jaka jest złożoność wstawienia (usunięcia) elementu na początku i końcu kolejki o dwóch końcach (deque) STL C++ ?
+Wybierz jedną odpowiedź:
+a. kwadratowa
+b. logarytmiczna
+c. liniowa
+-d. stała
+
+Jaka jest złożoność wstawienia (usunięcia) elementu do (z) mapy i zbioruSTL C++ ?
+Wybierz jedną odpowiedź:
+a. liniowa
+-b. logarytmiczna
+c. stała
+d. kwadratowa
+
+W jaki sposób algorytmy STL C++ „usuwają” elementy z kontenerów, na których operują ?
+Wybierz jedną odpowiedź:
+a. operując na niskopoziomowych wskaźnikach do kontenerów
+-b. przesuwając elementy do usunięcia na koniec kontenera i zwracając iterator do pierwszego z nich
+c. przekształcają kontener na tablicę, a po usunięciu elementów z pliku – na odwrót
+d. zapisując kontener do pliku, a po wymazaniu elementów z pliku – wczytując kontener z tego pliku
+
+Jaka jest złożoność wstawienia (usunięcia) elementu do (z) listy STL C++ (znając iterator do pozycji) ?
+Wybierz jedną odpowiedź:
+a. liniowa
+b. logarytmiczna
+c. kwadratowa
+-d. stała
+
+Czy algorytmy modyfikujące STL C++ mogą zmieniać wartości elementów w kontenerach, na których operują ?
+Wybierz jedną odpowiedź:
+a. mogą modyfikować typy obiektowe ale nie mogą modyfikować typów prostych
+b. nie
+-c. tak
+d. mogą modyfikować typy proste ale nie mogą modyfikować typów obiektowych
+
+Jaka jest złożoność dostępu do dowolnego elementu (random access) w mapach STL C++ wg wartości ?
+Wybierz jedną odpowiedź:
+a. stała
+b. kwadratowa
+c. logarytmiczna
+-d. liniowa
+
+Jaka jest złożoność wstawienia (usunięcia) elementu do (z) wektora STL C++ ?
+Wybierz jedną odpowiedź:
+a. logarytmiczna
+b. kwadratowa
+c. stała
+-d. liniowa
+
+Jaka jest rola adapterów w STL C++ ?
+Wybierz jedną odpowiedź:
+a. zmieniają interfejs iteratorów, tworząc iteratory odwrotne
+b. zmieniają interfejs obiektów funkcyjnych, tworząc z funktorów 2-argumentowych – 1-argumentowe
+-c. zmieniają interfejs kontenerów, tworząc kontenery o nowych funkcjonalnościach
+d. zmieniają interfejs alokatorów, tworząc nowe modele pracy z pamięcią
+
+Na czym operują algorytmy STL C++ ?
+Wybierz jedną odpowiedź:
+-a. na iteratorach
+b. na adapterach kontenerów
+c. na tablicach
+d. na kontenerach
+
+Czym są obiekty funkcyjne w STL C++ ?
+Wybierz jedną odpowiedź:
+-a. to obiekty, które „udają” funkcje
+b. to funkcje, które „udają” obiekty
+c. to obiekty, które posiadają co najmniej jedną metodę wirtualną
+d. to klasy, z których można tworzyć i obiekty, i funkcje
+
+Co to jest mapa (map) STL C++ ?
+Wybierz jedną odpowiedź:
+a. kolekcja kluczy
+b. kolekcja wartości
+-c. kolekcja par (klucz+wartość)
+d. inna nazwa wektora
+
+Jaka jest złożoność dostępu do dowolnego elementu (random access) w kolejkach o dwóch końcach (deque) STL C++ ?
+Wybierz jedną odpowiedź:
+a. kwadratowa (lub bliska jej)
+b. liniowa (lub bliska jej)
+c. logarytmiczna (lub bliska jej)
+-d. stała (lub bliska jej)
+
+Jaka jest rola iteratorów w STL C++ ?
+Wybierz jedną odpowiedź:
+a. umożliwiają bezpośredni dostęp do pamięci wirtualnej
+b. przechowują generyczne dane
+c. modyfikują działanie algorytmów przez zmianę kontenerów, na których operują
+-d. za ich pośrednictwem algorytmy pracują na kontenerach
+
+Jaka jest złożoność dostępu do dowolnego elementu (random access) w wektorach STL C++ ?
+Wybierz jedną odpowiedź:
+a. kwadratowa
+-b. stała
+c. logarytmiczna
+d. liniowa
+
+Czy algorytmy modyfikujące STL C++ mogą zmieniać strukturę kontenerów (dodawać nowe elementy i usuwać elementy istniejące), na których operują ?
+Wybierz jedną odpowiedź:
+-a. nie
+b. mogą dodawać nowe elementy, ale nie mogą usuwać elementów
+c. mogą usuwać elementy ale nie mogą dodawać nowych
+d. tak
+
+Jaka jest złożoność wstawienia (usunięcia) elementu na (z) dowolnej pozycji kolejki o dwóch końcach (deque) STL C++ ?
+Wybierz jedną odpowiedź:
+a. logarytmiczna
+b. kwadratowa
+-c. liniowa
+d. stała
+
+Jaka jest złożoność dostępu do dowolnego elementu (random access) w listach STL C++ ?
+Wybierz jedną odpowiedź:
+a. kwadratowa
+b. logarytmiczna
+c. stała
+-d. liniowa
+
+Czy algorytmy niemodyfikujące STL C++ naprawdę nie modyfikują kontenerów, na których działają ?
+Wybierz jedną odpowiedź:
+a. nie modyfikują wektorów, ale mogą modyfikować listy (tańszy koszt dostępu)
+b. mogą modyfikować oryginalne kontenery
+c. mogą „modyfikować” kontenery, ale tak naprawdę tworzą wtedy kopię i modyfikują kopię
+-d. naprawdę nie modyfikują
+
+Dlaczego biblioteka STL C++ praktycznie nie używa metod wirtualnych ?
+Wybierz jedną odpowiedź:
+a. ponieważ w C++ nie ma metod wirtualnych - pojawiają się dopiero w Javie i C
+b. to nieprawda, używa ona bardzo często metod wirtualnych
+-c. ponieważ są wolniejsze niż niewirtualne
+d. ponieważ nie ma takiej potrzeby - biblioteka nie oferuje kontenerów i algorytmów generycznych (uniwersalnych, działających na dowolnych typach danych)
+
+Kiedy stosujemy wzorzec architekturalny Warstwy (Layers) ?
+Wybierz jedną odpowiedź:
+a. kiedy chcemy umieścić komponenty systemu w różnych miejscach (warstwach) pamięci
+b. kiedy tworzymy mały, kompaktowy system chcemy przyspieszyć jego działanie
+c. kiedy tworzymy dość specyficzny, unikalny system i nie zależy nam, aby jego komponenty były uniwersalne (zdolne do wielokrotnego używania)
+-d. kiedy tworzymy dość złożony system i chcemy podzielić jego klasy na pewne komponenty wg ich poziomu abstrakcji
+
+Co jest główną ideą wzorca architekturalnego Warstwy (Layers) ?
+Wybierz jedną odpowiedź:
+a. stosowanie jak najczęściej kompozycji zamiast dziedziczenia
+b. ujednolicenie interfejsu obiektów umieszczonych w różnych warstwach, na który podzieliliśmy system
+-c. podział klas systemu na warstwy wg ich poziomów abstrakcji
+d. stosowanie namiastek obiektów zdalnych (umieszczonych w różnych warstwach)
+
+Czy warstwy w obiekcie zbudowanym wg wzorca Warstwy (Layers) można wymieniać ?
+Wybierz jedną odpowiedź:
+a. nie, w żadnym wypadku
+-b. tak, na inne warstwy o tym samym interfejsie
+c. tak, na dowolne inne warstwy
+d. nie, chyba że system składa się tylko z 2 warstw
+
+W typowym systemie opartym na klasycznej wersji wzorca architekturalnego Warstwy (Layers) jaka jest zależność między warstwami ?
+Wybierz jedną odpowiedź:
+-a. warstwa wyższa korzysta w swoim działaniu z warstwy bezpośrednio niższej
+b. warstwa niższa korzysta w swoim działaniu z warstwy bezpośrednio wyższej
+c. warstwa wyższa korzysta w swoim działaniu ze wszystkich warstw niższych
+d. warstwa niższa korzysta w swoim działaniu ze wszystkich innych warstw
+
+Na czym polega model komunikacji Polecenie z „keszowaniem” we wzorcu architekturalnym Warstwy (Layers) ?
+Wybierz jedną odpowiedź:
+-a. na wykonaniu polecenia warstwy najwyższej przez warstwę pośrednią, bez korzystania z usług warstwy najniższej
+b. na wykonaniu polecenia warstwy najniższej przez warstwę pośrednią, bez korzystania z usług warstwy najwyższej
+c. na zapamiętaniu wyniku zlecenia w warstwie najwyższej
+d. na zapamiętaniu wyniku zlecenia w warstwie najniższej
+
+Jaki jest kierunek komunikacji w modelu Zlecenie (top-down) we wzorcu architekturalnym Warstwy (Layers) ?
+Wybierz jedną odpowiedź:
+a. kaskadowe wywołanie metod od warstwy najniższej, przez wszystkie warstwy, do warstwy najwyższej; zwracanie wyniku w odwrotnym kierunku
+b. kaskadowe wywołanie metod od warstwy najniższej, przez wszystkie warstwy, do warstwy najwyższej; zwracanie wyniku w tym samym kierunku
+c. kaskadowe wywołanie metod od warstwy najwyższej, przez wszystkie warstwy, do warstwy najniższej; zwracanie wyniku w tym samym kierunku
+-d. kaskadowe wywołanie metod od warstwy najwyższej, przez wszystkie warstwy, do warstwy najniższej; zwracanie wyniku w odwrotnym kierunku kierunku
+
+Na czym polega model komunikacji Powiadomienie z filtrowaniem we wzorcu architekturalnym Warstwy (Layers) ?
+Wybierz jedną odpowiedź:
+-a. na zatrzymaniu powiadomienia na poziomie warstwy pośredniej, zanim dotrze ono do warstwy najwyższej
+b. na wykorzystaniu wzorca Pośrednik (Proxy) ochronny
+c. na przekazaniu notyfikacji do warstwy najwyższej
+d. na zatrzymaniu powiadomienia na poziomie warstwy pośredniej, zanim dotrze ono do warstwy najniższej
+
+Jaki jest kierunek komunikacji w modelu Powiadomienie (notyfikacja bottom-top) we wzorcu architekturalnym Warstwy (Layers) ?
+Wybierz jedną odpowiedź:
+-a. kaskadowe wywołanie metod od warstwy najniższej, przez wszystkie warstwy, do warstwy najwyższej; bez zwracania wyniku
+b. kaskadowe wywołanie metod od warstwy najwyższej, przez wszystkie warstwy, do warstwy najniższej; zwracanie wyniku w odwrotnym kierunku kierunku
+c. kaskadowe wywołanie metod od warstwy najniższej, przez wszystkie warstwy, do warstwy najwyższej; zwracanie wyniku w odwrotnym kierunku
+d. kaskadowe wywołanie metod od warstwy najwyższej, przez wszystkie warstwy, do warstwy najniższej; bez zwracania wyniku
+
+
+Na czym polega strategia push we wzorcu architekturalnym Potoki i Filtry (Pipes and Filters) ?
+Wybierz jedną odpowiedź:
+a. klient inicjuje przetwarzanie informacji przez system wywołując operację 'read' z ujścia danych
+b. klient inicjuje przetwarzanie informacji przez system wywołując operację 'write' z ujścia danych
+c. klient inicjuje przetwarzanie informacji przez system wywołując operację 'read' ze żródła danych
+-d. klient inicjuje przetwarzanie informacji przez system wywołując operację 'write' ze źródła danych
+
+Na czym polega strategia pull we wzorcu architekturalnym Potoki i Filtry (Pipes and Filters) ?
+Wybierz jedną odpowiedź:
+a. klient inicjuje przetwarzanie informacji przez system wywołując operację 'read' ze żródła danych
+-b. klient inicjuje przetwarzanie informacji przez system wywołując operację 'read' z ujścia danych
+c. klient inicjuje przetwarzanie informacji przez system wywołując operację 'write' z ujścia danych
+d. klient inicjuje przetwarzanie informacji przez system wywołując operację 'read' ze źródła danych
+
+Jaka jest rola potoków we wzorcu architekturalnym Potoki i Filtry (Pipes and Filters) ?
+Wybierz jedną odpowiedź:
+a. regulują prędkość „konsumowania” danych przez ujścia danych
+-b. łączą ze sobą filtry przetwarzające przepływające przez nie dane (czasem je buforując)
+c. regulują prędkość wytwarzania danych przez źródła danych
+d. pobierają dane ze źródeł i przesyłają je w niezmienionej formie do wybranych ujść
+
+Jaka jest rola filtrów we wzorcu architekturalnym Potoki i Filtry (Pipes and Filters) ?
+Wybierz jedną odpowiedź:
+a. filtrują przepływające przez nie dane (nie przepuszczając niektórych dalej)
+-b. przetwarzają przepływające przez nie dane
+c. pobierają dane ze źródeł i przesyłają je w niezmienionej formie do wybranych ujść
+d. łączą ze sobą potoki przetwarzające przepływające przez nie dane
+
+Do budowy jakich systemów stosujemy wzorzec architekturalny Potoki i Filtry (Pipes and Filters) ?
+Wybierz jedną odpowiedź:
+a. do prostych i kompaktowych systemów, aby przyspieszyć ich działanie przez zastosowanie potoków
+-b. do systemów, w których kolejne, różne komponenty przetwarzają potokowe ten sam strumień danych
+c. do systemów, w których takie same komponenty przetwarzają różne dane odebrane z różnych potoków
+d. do systemów, w którym poszczególne komponenty nie komunikują się ze sobą
+
+Co to są aktywne filtry we wzorcu architekturalnym Potoki i Filtry (Pipes and Filters) ?
+Wybierz jedną odpowiedź:
+-a. filtry, który w nieskończonej pętli w osobnych wątkach odczytują dane z lewego (poprzedzającego) potoku, przetwarzają je i zapisują do prawego (następującego) potoku
+b. filtry, które w nieskończonej pętli w jednym wspólnym dla wszystkich filtrów wątku odczytują dane z lewego (poprzedzającego) potoku, przetwarzają je i zapisują do prawego (następującego) potoku
+c. filtry, które w nieskończonej pętli w osobnych wątkach odczytują dane ze źródła, przetwarzają je i zapisują do ujścia
+d. filtry, które potrafią wymusić na źródle wyprodukowanie danych
+
+
+Jaka jest rola komponentu-eksperta we wzorcu architekturalnym Tablica rozwiązań (Blackboard) ?
+Wybierz jedną odpowiedź:
+a. tworzy algorytm, który potem zastosowany do danych wejściowych znajdzie finalne rozwiązanie
+b. równolegle z innymi ekspertami przetwarza swoją część danych wyjściowych, produkując część finalnego rozwiązania
+c. nie pozwala systemowi wyprodukować złego rozwiązania (wszystkie podejrzane rozwiązania są natychmiast odrzucanie, przez co mamy gwarancję, że system zadziała poprawnie)
+-d. przetwarza dane z tablicy rozwiązań, ale wyniki tego przetwarzania nie muszą (choć mogą) być użyteczne do znalezienia końcowego rozwiązania, poprawne, kompletne, najlepsze
+
+Kiedy stosujemy wzorzec architekturalny Tablica rozwiązań (Blackboard) ?
+Wybierz jedną odpowiedź:
+a. kiedy tworzymy prosty system o znanym algorytmie działania, który jednak może mieć wiele implementacji
+b. kiedy tworzymy system, który może wyprodukować wiele równorzędnych, dobrych, konkurencyjnych rozwiązań umieszczanych w tablicy rozwiązań, z której klient wybiera jedno
+-c. kiedy tworzymy system, który rozwiązuje złożone problemy korzystając z pracy komponentówe-ekspertów „zgromadzonych” wokół tablicy z różnymi obserwacjami, wynikami pośrednimi, alternatywnymi
+d. kiedy do przechowywania danych (w tym rozwiązań) chcemy używać tablicy zamiast list
+
+
+Czy klient i serwis w systemie opartym o wzorzec architekturalny Broker mogą być napisani w różnych językach programowania ?
+Wybierz jedną odpowiedź:
+-a. tak
+b. tak, ale tylko takich, które kompilują się do tego samego kodu pośredniego (jak np. Java i Groovy, C
+c. nie
+d. tak, ale tylko tego samego producenta
+
+Skąd Broker wie, gdzie odnaleźć obiekty-serwisy, którym musi przekazać żądanie klienta ?
+Wybierz jedną odpowiedź:
+a. pyta o to klienta, który przekazał żądanie
+b. klient sam go o tym informuje
+c. odpytuje cyklicznie wszystkie komputery w sieci lokalnej, i stąd zna wszystkie serwisy
+-d. obiekty-serwisy rejestrują się w nim, i stąd zna wszystkie serwisy
+
+Czemu służą pośrednicy strony klienta (client-side proxy) we wzorcu archiitekturalnym Broker ?
+Wybierz jedną odpowiedź:
+a. umożliwiają klientom rejestrowanie się w brokerze
+b. komunikują klienta z serwisem bez pośrednictwa brokera
+-c. reprezentują serwis po stronie klienta, tak, że klient nie musi zajmować się komunikacją przez sieć z serwisem (widzi go jako obiekt lokalny)
+d. reprezentują klienta po stronie serwisu, tak, że serwis nie musi zajmować się komunikacją przez sieć ze swoim klientem (realizuje jego zlecenia jak lokalne wywołania metod)
+
+Czemu służą pośrednicy strony serwisu-serwera (server-side proxy) we wzorcu archiitekturalnym Broker ?
+Wybierz jedną odpowiedź:
+a. reprezentują serwis po stronie klienta, tak, że klient nie musi zajmować się komunikacją przez sieć z serwisem (widzi go jako obiekt lokalny)
+b. komunikują serwis z klientem bez pośrednictwa brokera
+-c. reprezentują klienta po stronie serwisu, tak, że serwis nie musi zajmować się komunikacją przez sieć ze swoim klientem (realizuje jego zlecenia jak lokalne wywołania metod)
+d. ukrywają wybrane funkcjonalności serwisu przez niektórymi serwisami
+
+Na czym polega rejestracja serwisu w obiekcie Brokera ?
+Wybierz jedną odpowiedź:
+-?a. na wysłaniu brokerowi interfejsu serwisu i poinformowaniu go o adresie serwisu
+b. na poinformowaniu brokera o adresie serwisu
+-(bardziej to, bo na wykładzie nic nie ma o adresie serwisu)c. na wysłaniu brokerowi interfejsu serwisu
+d. na wysłaniu brokerowi interfejsu serwisu oraz poinformowaniu go o adresie serwisu i języku, w jakim serwis został napisany (aby klient wiedział, czy może z niego skorzystać)
+
+W jaki sposób w systemach zbudowanych wg wzorca architekturalnego Broker obiekt-klient wie, gdzie jest obiekt-serwis, z którego chce skorzystać ?
+Wybierz jedną odpowiedź:
+a. rejestruje się w brokerze, a gdy te się dowie, przekazuje mu tę informację
+-b. nie musi tego wiedzieć – przekazuje zlecenie brokerowi
+c. pyta o to obiekt brokera
+d. odczytuje to sam z brokera – globalnej tablicy ze wskaźnikami obiektów
+
+Kiedy stosuje wzorzec architekturalny Broker ?
+Wybierz jedną odpowiedź:
+-a. kiedy chcemy, aby system składał się z rozproszonych, komunikujących się ze sobą obiektów, które nie znają wzajemnie swoich położeń
+b. kiedy dzielimy system na komponenty wg ich stopnia abstrakcji, i komponenty wyższego poziomu budują swoje funkcjonalności na komponentach niższego poziomu
+c. kiedy chcemy, aby system składał się z rozproszonych, komunikujących się ze sobą obiektów, które znają wzajemnie swoje położenia
+d. kiedy piszemy systemy wspierające pracę instytucji finansowych
+
+Na czym polega wariant wzorca architekturalnego Broker o nazwie Direct Communication Broker System ?
+Wybierz jedną odpowiedź:
+a. na rezygnacji z pośrednika strony serwera – serwis musi sam nasłuchiwać w sieci na nadejście żądania
+-b. klient jedynie uzyskuje od brokera adres serwisu, a następnie komunikuje się z nim bezpośrednio
+c. klient przesyła brokerowi zlecenie i nie musi wiedzieć, gdzie jest serwis, który je wykona
+d. na rezygnacji z pośrednika strony klienta – klient musi sam serializować parametry wywołania
+
+Na czym polega wariant wzorca architekturalnego Broker o nazwie Message Passing Broker System ?
+Wybierz jedną odpowiedź:
+a. klient jedynie uzyskuje od brokera adres serwisu, a następnie komunikuje się z nim bezpośrednio
+-b. klient wysyła jedynie dane (wiadomość), a serwis sam wie, jaką operację na nich wykonać
+c. razem z danymi klient wysyła serwisowi kod operacji, który ten musi na nim wykonać
+d. klient wysyła zlecenie serwisowi i nie spodziewa się żadnej odpowiedzi (wiadomość bez powrotu)
+
+Wzorce architekturalne Refleksja i Mikrojądro służą do budowy systemów:
+Wybierz jedną odpowiedź:
+a. równoległych
+b. rozproszonych
+-c. adaptacyjnych
+d. interaktywnych
+
+Czym jest mikrojądro we wzorcu architekturalnym o tej samej nazwie (Microkernel) ?
+Wybierz jedną odpowiedź:
+a. to ograniczony zbiór zmiennych (pól), z którego mogą korzystać operacje systemu
+-b. to ograniczony zbiór niezmiennych funkcjonalności bazowych, służących do realizacji zmieniających się funkcjonalności systemu oferowanych klientowi
+c. to ograniczony zbiór klas, z których może skorzystać system
+d. to ograniczony zbiór funkcjonalności systemu oferowanych klientowi wykorzystując liczne, zmieniające się dynamicznie funkcje bazowe (prywatne) systemu
+
+Czym są serwery wewnętrzne we wzorcu architekturalnym Mikrojądro (Microkernel) ?
+Wybierz jedną odpowiedź:
+a. to zbiór klientów, którzy korzystają z systemu i są umieszczeni na tej samej maszynie co system
+b. to maszyny, na których umieszczone są kopie systemu, aby zwiększyć jego niezawodność (są używane w razie awarii głównego serwera)
+c. to moduły dynamicznie dołączane do systemu, które realizują zmieniające się funkcjonalności oferowane klientom
+-d. to moduły dynamicznie dołączane do systemu, bezpośrednio operujące na zasobach na rzecz mikrojądra i izolujące od tych zasobów to mikrojądro
+
+Czym są serwery zewnętrzne we wzorcu architekturalnym Mikrojądro (Microkernel) ?
+Wybierz jedną odpowiedź:
+-a. to moduły dynamicznie dołączane do systemu, które realizują zmieniające się funkcjonalności oferowane klientom
+b. to zbiór klientów, którzy korzystają z systemu i są umieszczeni na innych niż system maszynach
+c. to moduły dynamicznie dołączane do systemu, bezpośrednio operujące na zasobach na rzecz mikrojądra i izolujące od tych zasobów to mikrojądro
+d. to maszyny, na których umieszczone są dane systemu, realizując technikę oddzielenia danych od kodu
+
+Jaka jest rola adapterów we wzorcu architekturalnym Mikrojądro (Microkernel) ?
+Wybierz jedną odpowiedź:
+a. oferują mechanizm odnajdywania funkcjonalności systemu przez klientów (rodzaj usługi katalogowej)
+b. pozwalają klientom na bezpośrednie korzystanie z ukrytych funkcjonalności mikrojądra
+-c. oferują klientom zasadnicze funkcjonalności systemu (realizowane przez zewnętrzne serwery) pod ustalonym interfejsem
+d. pozwalają klientom na bezpośrednie korzystanie z ukrytych funkcjonalności serwerów wewnętrznych
+
+Kiedy stosujemy wzorzec architekturalny Mikrojądro (Microkernel) ?
+Wybierz jedną odpowiedź:
+-a. kiedy tworzymy system przewidziany na długie użytkowanie, którego funkcjonalności i zasoby, na których działa, mogą się zmieniać
+b. kiedy tworzony system oferuje zbiór bazowych funkcjonalności, z których to sam klient „składa” bardziej złożone operacje
+c. kiedy tworzony system ma być zoptymalizowany pamięciowo, aby można go było uruchamiać na urządzeniach z małymi zasobami
+d. kiedy tworzymy system o nielicznych funkcjonalnościach, które nie będą się zmieniać
+
+Kto morze korzystać z funkcjonalności mkirojądra we wzorcu architekturalnym o tej samej nazwie (Microkernel) ?
+Wybierz jedną odpowiedź:
+a. klienci systemu
+b. wszystkie inne elementy systemu
+-c. serwery zewnętrzne
+d. serwery wewnętrzne
+
+
+Metawarstwa we wzorcu architekturalnym Refleksja służy do:
+Wybierz jedną odpowiedź:
+a. przechowywania obiektów klas, które są używane przez system
+-b. przechowywania kluczowych dla działania systemu danych, których zmiana zmienia działanie systemu
+c. odpytywania o budowę klas (konstruktory, metody, pola) używanych przez system
+d. przechowywania niezmiennych w trakcie działania systemu danych (rodzaj pamięci statycznej)
+
+Kto może zmieniać dane zapisane w metawarstwie systemu zbudowanego wg wzorca architekturalnego Refleksja ?
+Wybierz jedną odpowiedź:
+a. każdy
+-b. administrator systemu
+c. klient systemu
+d. nikt
+
+Co jest główną ideą wzorca Refleksja ?
+Wybierz jedną odpowiedź:
+a. zastosowanie dynamicznego ładowania modułów do systemu, który dzięki temu może się łatwo zmieniać
+b. wydzielenie trzech warstw systemu: logicznej, danych i prezentacji
+-c. uzależnienie działania systemu od wydzielonej metawarstwy, której zmiana powoduje zmianę działania systemu
+d. zastosowanie usług katalogowych, dzięki którym klient zawsze może odnaleźć szukany serwis
+
+
+Wzorce architekturalne Model-Widok-Kontroler (MVC) i Prezentacja-Abstrakcja-Kontrola (PAC) służą do budowy systemów:
+Wybierz jedną odpowiedź:
+a. adaptacyjnych
+b. rozproszonych
+c. równoległych
+-d. interaktywnych
+
+Jaka jest rola kontrolera we wzorcu architekturalnym Model-Widok-Kontroler (MVC) ?
+Wybierz jedną odpowiedź:
+-a. pośredniczy w komunikacji systemu z użytkownikiem
+b. komunikuje ze sobą różne elementy systemu (model i widok)
+c. komunikuje się z innymi kontrolerami w systemie
+d. kontroluje, kto ma prawo korzystać z funkcjonalności systemu
+
+Jaka jest rola widoku we wzorcu architekturalnym Model-Widok-Kontroler (MVC) ?
+Wybierz jedną odpowiedź:
+a. pośredniczy w komunikacji systemu z użytkownikiem
+-b. zapewnia funkcjonalność prezentacji danych modelu
+c. pozwala klientowi uzyskać wgląd do wewnętrznych struktur systemu
+d. zapewnia dostęp systemu do danych i realizacją funkcjonalności (logikę) systemu
+
+Jaka jest rola modelu we wzorcu architekturalnym Model-Widok-Kontroler (MVC) ?
+Wybierz jedną odpowiedź:
+-a. zapewnia dostęp systemu do danych i realizacją funkcjonalności (logikę) systemu
+b. pośredniczy w komunikacji systemu z użytkownikiem
+c. modeluje działanie systemu wg wzoru matematycznego
+d. definiuje modele wyświetlania danych przez system
+
+Od czego zależny jest model we wzorcu architekturalnym Model-Widok-Kontroler (MVC) ?
+Wybierz jedną odpowiedź:
+a. od innych modeli zdefiniowanych w systemie
+-b. pośrednio od widoku (powiadamia go o swoich zmianach wg wzorca Obserwator)
+c. bezpośrednio od widoku (wywołuje jego publiczne metody)
+d. bezpośrednio od kontrolera (wywołuje jego publiczne metody)
+
+Czym różni się od wersji klasycznej wzorca architekturalnego Model-Widok-Kontroler (MVC) wariant stosowany w aplikacjach internetowych ?
+Wybierz jedną odpowiedź:
+-a. kontroler nie realizuje interakcji (myszka, klawiatura) z użytkownikiem i często realizuje logikę systemu
+b. to nie model zapewnia dostęp do danych, tylko widok
+c. model może mieć tylko jeden kontroler, a kontroler może mieć tylko jeden widok
+d. model i widok są połączone w komponent zwany dokumentem (zwykle dokument HTML)
+
+
+Jaka jest rola prezentacji we wzorcu architekturalnym Prezentacja-Abstrakcja-Kontrola (PAC) ?
+Wybierz jedną odpowiedź:
+a. łączy się z innymi prezentacjami w systemie
+b. tylko komunikuje się z użytkownikiem systemu
+-c. wyświetla dane i komunikuje się z użytkownikiem
+d. tylko wyświetla dane systemu
+
+Jaka jest rola abstrakcji we wzorcu architekturalnym Prezentacja-Abstrakcja-Kontrola (PAC) ?
+Wybierz jedną odpowiedź:
+-a. odpowiada za dostęp do danych i logikę systemu
+b. wyświetla dane i komunikuje się z użytkownikiem
+c. komunikuje się z innymi abstrakcjami w systemie
+d. łączy ze sobą komponenty widoku i modelu systemu
+
+Jaka jest rola kontroli we wzorcu architekturalnym Prezentacja-Abstrakcja-Kontrola (PAC) ?
+Wybierz jedną odpowiedź:
+a. zabezpiecza system przed niepowołanym dostępem poprzez listę ACL (Access Control List)
+-b. komunikacja: między abstrakcją i prezentacją w agencie i z kontrolami innych agentów
+c. komunikuje się z użytkownikiem systemu
+d. pobiera dane z bazy danych i implementuje logikę danego agenta
+
+W jaki sposób komunikują się abstrakcja i prezentacja danego agenta we wzorcu architekturalnym Prezentacja-Abstrakcja-Kontrola (PAC) ?
+Wybierz jedną odpowiedź:
+a. bezpośrednio ze sobą
+-b. przez kontrolę tego agenta
+c. przez mechanizm przerwać
+d. przez kontrolę agenta najwyższego poziomu
+
+Z jakim komponentem komunikuje się klient we wzorcu architekturalnym Prezentacja-Abstrakcja-Kontrola (PAC) ?
+Wybierz jedną odpowiedź:
+a. z abstrakcją agenta najwyższego poziomu
+-b. ze wszystkimi prezentacjami (wszystkich agentów)
+c. z kontrolą agenta najwyższego poziomu
+d. ze wszystkimi kontrolerami (wszystkich agentów)
+
+Co jest szkieletem systemu zbudowanym wg wzorca architekturalnego Prezentacja-Abstrakcja-Kontrola (PAC) ?
+Wybierz jedną odpowiedź:
+a. drzewo prezentacji
+b. drzewo abstrakcji i prezentacji
+c. drzewo abstrakcji
+-d. drzewo kontroli
+
+Kiedy zastosujemy wzorzec architekturalny Prezentacja-Abstrakcja-Kontrola (PAC) ?
+Wybierz jedną odpowiedź:
+a. kiedy tworzymy system obiektowy (złożony z obiektów-agentów) w języku nieobiektowym
+b. kiedy tworzymy interaktywny system składający się z działających jednocześnie komponentów bez żadnej formy graficznej ani interakcji z użytkownikiem (demonów)
+c. kiedy tworzymy system adaptacyjny
+-d. kiedy tworzymy system składający się z wielu działających jednocześnie komponentów (agentów), z których każdy może mieć formę graficzną
+
+Z ilu agentów może się składać system zbudowany wg wzorca architekturalnego Prezentacja-Abstrakcja-Kontrola (PAC) ?
+Wybierz jedną odpowiedź:
+a. z trzech (po jednym na każdy rodzaj komponenty)
+-b. z wielu
+c. z żadnego – agenci to klienci systemu
+d. z jednego
+
+Który agent w systemie zbudowanym wg wzorca architekturalnego Prezentacja-Abstrakcja-Kontrola (PAC) ma prawo mieć postać graficzną ?
+Wybierz jedną odpowiedź:
+a. tylko agenci poziomu najniższego
+-b. wszyscy agenci
+c. wszyscy agenci z wyjątkiem agentów pośrednich poziomów
+d. tylko agent najwyższego poziomu
+
+Czy jedna klasa może „uczestniczyć” (pełnić różne role) w kilku wzorcach w jednym programie ?
+Wybierz jedną odpowiedź:
+-a. tak, nawet jest to wskazane podnosząc zagęszczenie wzorców (pattern density)
+b. nie, chyba że jest to klasa abstrakcyjne
+c. tak, o ile będą to wzorce z jednej grupy
+d. nie, gdyż zwiększyłoby to zagęszczenie wzorców (pattern density)
+
+Rola w wzorcu to:
+Wybierz jedną odpowiedź:
+a. klasa bazowa dla wszystkich klas we wzorcu, definiująca zbiór podstawowych metod
+b. inna nazwa wzorca
+c. kontekst użycia tego wzorca
+-d. propozycja klasy we wzorcu z zbiorem logicznie powiązanych funkcjonalności
+
+Ile ról zdefiniowanych w jednym wzorcu może pełnić klasa w konkretnym zastosowaniu tego wzorca:
+Wybierz jedną odpowiedź:
+a. jedną
+-b. wiele
+c. żadnej
+d. jedną lub dwie
+
+Czy można użyć kilku wzorców projektowych w jednym programie ?
+Wybierz jedną odpowiedź:
+a. nie, jeden program to jeden wzorzec
+b. tak, o ile będą to wzorce z jednej grupy
+-c. tak
+d. nie, chyba że godzimy się na znaczne spowolnienie programu
+
+Które 2 pary opisują wzorce konkurencyjne (oferujące różna rozwiązania do tego samego problemu) ?
+Wybierz jedną odpowiedź:
+a. Abstrakcyjna Fabryka (Abstract Factory) i Metoda Fabrykująca (Factory Method) oraz Metoda Fabrykująca (Factory Method) i Metoda Szablonowa (Template Method)
+b. Pyłek (Flyweight) i Kompozyt oraz Iterator i Gość (Visitor)
+-c. Metoda Fabrykująca (Factory Method) i Prototyp oraz Strategia i Metoda Szablonowa (Template Method)
+d. Adapter i Pośrednik (Proxy) oraz Budowniczy (Builder) i Singleton
+
+Które wzorce są wzorcami złożonymi (wykorzystującymi do swojego działania inne wzorce) ?
+Wybierz jedną odpowiedź:
+a. Singleton i Memento
+-b. Abstrakcyjna Fabryka (Abstract Factory) i Iterator Wewnętrzny (Abstract Factory zawiera kilka Factory Method; Iterator Wewnętrzny zawiera Polecenie)
+c. Adapter i Pośrednik (Proxy)
+d. Kompozyt i Pyłek (Flyweight)
+
+Co to jest pattern story ?
+Wybierz jedną odpowiedź:
+a. sytuacja, kiedy budowa konkretnego systemu skończyła się porażką mimo poprawnego użycia wzorców projektowych
+b. historia powstania danego wzorca
+-c. historia zastosowania konkretnych wzorców projektowych do budowy konkretnego systemu
+d. alternatywna nazwa danego wzorca
+
+Co to jest zagęszczenie wzorców w programie (pattern density) ?
+Wybierz jedną odpowiedź:
+a. liczba klas w programie, które stanowią część jakiegoś wzorca
+b. stosunek liczby klas w programie do liczby wzorców
+-c. stosunek liczby wzorców w programie do liczby klas
+d. liczba wzorców użytych w programie
+
+Duże zagęszczenie wzorców w programie (pattern density) ?
+Wybierz jedną odpowiedź:
+-a. świadczy o dojrzałej i przemyślanej architekturze
+b. jest niepożądane, gdyż komplikuje budowę programu
+c. znacznie zwalnia działanie programu
+d. znacznie przyspiesza działanie programu
+
+Co to jest sekwencja wzorców (pattern sequence) ?
+Wybierz jedną odpowiedź:
+-a. powtarzający się w wielu procesach tworzenia konkretnych programów ciąg zastosowań tych samych wzorców
+b. przepis na stworzenie gotowego programu przez zastosowanie kilku wzorców w zadanej kolejności
+c. alfabetyczny spis wzorców użytych w danym systemie
+d. alfabetyczny spis wszystkich znanych wzorów
+
+Co to jest mapa wzorców ?
+Wybierz jedną odpowiedź:
+a. diagram klas danego systemu z zaznaczonymi użytymi wzorcami
+b. graficzne zobrazowanie statystyki użycia poszczególnych wzorców (wskazuje te najbardziej popularne)
+c. klasyfikacja wzorców do różnych grup, co pomaga w ich nauce
+-d. powiązania, zależności między wzorcami ułatwiające ich wspólne, świadome użycie
+
+Co to jest język wzorców (pattern language) ?
+Wybierz jedną odpowiedź:
+a. zbiór wszystkich nazw (podstawowych i alternatywnych, często w różnych językach) wzorców z danej dziedziny
+b. dokładny opis powiązań i zależności między wzorcami, co ułatwia ich łączenie
+-c. pomoc w tworzeniu przez projektanta architektury systemu przez proponowanie stosowania kolejnych (często alternatywnych) wzorców
+d. „przepis” umożliwiający automatyczne (często maszynowe) stworzenie gotwej architektury systemu przez stosowanie kolejnych (czasem alternatywnych) wzorców
+
